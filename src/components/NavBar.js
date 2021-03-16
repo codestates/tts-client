@@ -1,13 +1,11 @@
 import React from 'react'
 
-function SingnupPage() {
+function NavBar() {
     return (
         <div>
-            SingnupPage
+            helloe
         </div>
     )
 }
 
-export default SingnupPage
-
-
+export default NavBar
