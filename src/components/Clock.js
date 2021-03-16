@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Clock() {
-    return (
-        <div>
-            helloe
-        </div>
-    )
+  return <div>world</div>;
 }
 
-export default Clock
+export default Clock;
