@@ -1,13 +1,11 @@
 import React from 'react'
 
-function SingnupPage() {
+function UserInfo() {
     return (
         <div>
-            SingnupPage
+            helloe
         </div>
     )
 }
 
-export default SingnupPage
-
-
+export default UserInfo
