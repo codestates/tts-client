@@ -1,6 +1,6 @@
 ---
 name: Task Card
-about: Task Card 생성시 사용되는 Template 입니다
+about: Task Card 생성시 사용되는 Template 입니다 (퍼가세요)
 title: "[Task] 작업내용을 작성해 주세요"
 labels: ''
 assignees: ''
