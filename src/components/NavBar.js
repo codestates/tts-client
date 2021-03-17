@@ -12,7 +12,6 @@ function NavBar() {
             setActive(true);
         }
     };
-
     return (
         <div>
             <nav className='navBar'>
@@ -22,7 +21,7 @@ function NavBar() {
                 <ul className={ `navBarMenu ${active ? "active" : ""}` }>
                     <li><a href='/'>초시계</a></li>
                     <li><a href='/mypage'>마이페이지</a></li>
-                    <li><a href='/' className='navBarLogin'>로그인</a></li>
+                    <li><a href='/login' className='navBarLogin'>로그인</a></li>
                     <li><a href='/' className='navBarSignup'>회원가입</a></li>
                 </ul>
                 <a className='navBarHambeger' href='/#' onClick={hambergerHandler}> <i class="fas fa-bars"></i></a>
