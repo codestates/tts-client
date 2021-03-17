@@ -1,3 +1,4 @@
+import '../componentsCss/Clock.css'
 import React from "react";
 
 function Clock() {
