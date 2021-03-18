@@ -1,13 +1,15 @@
+
 .navBar{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #0A122A;
     padding: 8px 12px;
+    border-bottom: 5px solid ;
 }
 
 
-a{
+.navBar a{
     text-decoration: none;
     color: #FFBF00;
 }
