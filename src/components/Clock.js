@@ -1,4 +1,9 @@
+
 import React, { useState, useEffect, useRef } from "react";
+
+import '../componentsCss/Clock.css'
+
+
 
 function Clock() {
   const [tick, setTick] = useState(0);
