@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function OneRecord() {
-    return (
-        <div>
-            helloe
-        </div>
-    )
+  return <div>helloe</div>;
 }
 
-export default OneRecord
+export default OneRecord;
