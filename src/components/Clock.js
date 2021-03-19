@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToRecord } from "../actions/recordAction";
+import "../componentsCss/Clock.css";
 
 function Clock() {
   const [tick, setTick] = useState(0);
@@ -26,10 +27,11 @@ function Clock() {
   );
 
   return (
-    <div>
+    <div className="parent">
       <div
+        className={tickControl ? `clockGo` : `clockStop`}
         //todo: css 파일로 옮겨주세요
-        style={{ cursor: "pointer" }}
+        // style={{ cursor: "pointer" }}
         onClick={() => {
           // console.log(state);
           // dispatch(addToRecord(hh * 3600 + min * 60 + tick));
@@ -43,7 +45,12 @@ function Clock() {
 
           // console.log(state);
         }}>
-        &#x270C;&#62; {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick} &#60;&#x270C;
+        <div className="hhMmTickBox">
+          <div className="hhMm">
+            {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}
+          </div>
+          <span className="tick">:{tick < 10 ? `0${tick}` : tick}</span>
+        </div>
       </div>
 
       {/* <button
