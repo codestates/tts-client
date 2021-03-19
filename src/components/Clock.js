@@ -1,9 +1,6 @@
-
 import React, { useState, useEffect, useRef } from "react";
-
-import '../componentsCss/Clock.css'
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { addToRecord } from "../actions/recordAction";
 
 function Clock() {
   const [tick, setTick] = useState(0);
@@ -11,6 +8,9 @@ function Clock() {
   const [hh, setHh] = useState(0);
   const [delay, setDelay] = useState(1000);
   const [tickControl, setTickControl] = useState(false);
+  // const dispatch = useDispatch();
+  // const state = useSelector((state) => state.recordReducer);
+  // const itemState = useSelector((state) => state.recordReducer);
 
   useInterval(
     () => {
@@ -25,31 +25,37 @@ function Clock() {
     tickControl ? delay : null
   );
 
-  // useEffect(() => {
-  //   if (tick !== 0 && tick % 60 === 0) {
-  //     setMin(min + 1);
-  //   }
-  // }, tick);
-
   return (
     <div>
       <div
         //todo: css 파일로 옮겨주세요
         style={{ cursor: "pointer" }}
         onClick={() => {
+          // console.log(state);
+          // dispatch(addToRecord(hh * 3600 + min * 60 + tick));
           setTickControl(tickControl ? false : true);
+          setTick(tick - tick);
+          setMin(min - min);
+          setHh(hh - hh);
+          // dispatch(addToRecord(hh * 3600 + min * 60 + tick));
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          // console.log(itemState);
+
+          // console.log(state);
         }}>
-        {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick}
+        &#x270C;&#62; {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick} &#60;&#x270C;
       </div>
-      <button
+
+      {/* <button
         onClick={() => {
           setTickControl(tickControl ? false : true);
         }}>
         가라,멈춰라
-      </button>
+      </button> */}
     </div>
   );
 }
+
 function useInterval(callback, delay) {
   const savedCallback = useRef();
 

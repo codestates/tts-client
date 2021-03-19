@@ -1,5 +1,5 @@
-import '../componentsCss/Login.css'
-import React from 'react'
+import "../componentsCss/Login.css";
+import React from "react";
 
 function Login() {
     return (
@@ -35,8 +35,8 @@ function Login() {
                     </div>
                 </form>
             </section>
-        </div>
-    )
+    </div>
+  );
 }
 
-export default Login
+export default Login;

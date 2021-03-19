@@ -1,13 +1,15 @@
-import React from 'react';
-import NavBar from '../components/NavBar';
-import Clock from '../components/Clock'
-function MainPage() {
-    return (
-        <div>
-            <NavBar/>
-            <Clock/>
-        </div>
-    )
-}
+import React from "react";
+import NavBar from "../components/NavBar";
+import Clock from "../components/Clock";
+import OneRecordBox from "../components/OneRecordBox";
 
-export default MainPage
+function MainPage() {
+  return (
+    <div>
+      <NavBar />
+      <Clock />
+      <OneRecordBox />
+    </div>
+  );
+}
+export default MainPage;
