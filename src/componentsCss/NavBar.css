@@ -1,80 +1,77 @@
-
-.navBar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0A122A;
-    padding: 8px 12px;
-    border-bottom: 5px solid ;
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a122a;
+  padding: 8px 12px;
+  border-bottom: 5px solid;
 }
 
-
-.navBar a{
-    text-decoration: none;
-    color: #FFBF00;
+.navBar a {
+  text-decoration: none;
+  color: #ffbf00;
 }
 
-
-.navBarLogo{
-    font-size: 24px;
-    margin-left: 30px;
+.navBarLogo {
+  font-size: 24px;
+  margin-left: 30px;
 }
 
-.navBarMenu{
-    display: flex;
-    list-style: none;
-    padding-left: 0;
-    align-items: baseline;
+.navBarMenu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  align-items: baseline;
 }
 
 .navBarMenu li {
-    padding: 8px 20px;
+  padding: 8px 20px;
 }
 
 .navBarMenu li:hover {
-    background-color: #EFEFEF;
-    border-radius: 4px;
+  background-color: #efefef;
+  border-radius: 4px;
 }
 
-.navBarHambeger{
+.navBarHambeger {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  background-color: #0a122a;
+  /* color: #EFEFEF; */
+}
+
+.navBarLogin {
+  font-size: 20px;
+}
+.navBarSignup {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navBarMenu {
     display: none;
-    position: absolute;
-    right: 32px;
-    font-size: 24px;
-    background-color: #0A122A;
-    /* color: #EFEFEF; */
-}
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-.navBarLogin{
-    font-size: 20px;
-}
-.navBarSignup{
-    font-size: 30px;
-}
+  .navBarMenu li {
+    width: 100%;
+    text-align: center;
+  }
 
-@media screen and (max-width:768px){
-    .navBar{
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .navBarHambeger {
+    display: block;
+  }
 
-    .navBarMenu{
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navBarMenu li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .navBarHambeger{
-        display: block;
-    }
-
-    .navBarMenu.active{
-        display: flex;
-    }
+  .navBarMenu.active {
+    display: flex;
+  }
 }

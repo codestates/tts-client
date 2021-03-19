@@ -1,35 +1,18 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  text-decoration: none;
-  font-family: "Jua", sans-serif;
-}
-
-.parent {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center; /* main axiss */
-  align-items: center; /* cross axiss */
-  text-align: center;
-}
-
 .clockGo {
   background-color: #0a122a;
   color: #ffffff;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center; /* main axiss */
-  align-items: center; /* cross axiss */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   cursor: pointer;
   border: 5px solid yellow;
   border-radius: 20px;
-  padding-top: auto;
-  width: 345px;
-  height: 230px;
-  font-size: 60px;
+  padding: 30px;
+  margin: 15px 20px 0;
+  /* height: 70%; */
 }
 
 .clockStop {
@@ -38,73 +21,73 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center; /* main axiss */
-  align-items: center; /* cross axiss */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   cursor: pointer;
   border: 5px solid red;
   border-radius: 20px;
-  padding-top: auto;
-  width: 345px;
-  height: 230px;
-  font-size: 60px;
-}
-
-.hhMmTickBox {
-  display: flex;
-  flex-direction: column;
+  padding: 30px;
+  margin: 15px 20px 0;
+  /* height: 80%; */
 }
 
 .hhMm {
-  font-size: 100px;
+  font-size: 5rem;
 }
 
 .tick {
-  font-size: 50px;
+  font-size: 2rem;
+  padding-top: 40px;
 }
 
-/* 768 1024 ipad 사이즈 */
-@media screen and (min-width: 768px) {
-  .clockGo {
-    width: 740px;
-    height: 500px;
-    margin-top: 30px;
-  }
-
-  .clockStop {
-    width: 740px;
-    height: 500px;
-    margin-top: 30px;
-  }
-
+@media screen and (min-height: 1024px) {
   .hhMm {
-    font-size: 180px;
+    font-size: 8rem;
   }
 
   .tick {
-    font-size: 100px;
+    font-size: 2.5rem;
+    padding-top: 60px;
   }
 }
 
-/* 1024 1366 ipad pro 사이즈 */
-@media screen and (min-width: 1024px) {
-  .clockGo {
-    width: 920px;
-    height: 600px;
-    margin-top: 40px;
-  }
-
-  .clockStop {
-    width: 920px;
-    height: 600px;
-    margin-top: 40px;
-  }
-
+@media screen and (min-height: 1366px) {
   .hhMm {
-    font-size: 220px;
+    font-size: 10rem;
   }
 
   .tick {
-    font-size: 120px;
+    font-size: 3rem;
+    padding-top: 70px;
+  }
+
+  .clockStop {
+    margin: 30px 40px 0;
+  }
+
+  .clockGo {
+    margin: 30px 40px 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hhMm {
+    font-size: 11rem;
+  }
+
+  .tick {
+    font-size: 4rem;
+    padding-top: 80px;
+  }
+
+  .clockStop {
+    margin: 60px 40px 0;
+    height: 60%;
+  }
+
+  .clockGo {
+    margin: 60px 40px 0;
+    height: 60%;
   }
 }

@@ -1,123 +1,39 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  text-decoration: none;
-  font-family: "Jua", sans-serif;
-}
-
-.parent {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around; /* main axiss */
-  align-items: center; /* cross axiss */
-  text-align: center;
-  /* margin-top: 10px; */
-}
-
 .oneRecordBox {
   background-color: #0a122a;
   color: #ffffff;
+  border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around; /* main axiss */
-  font-size: 20px;
-  border: 5px solid #0a122a;
-  border-radius: 20px;
-  width: 160px;
-  height: 10px;
+  align-items: center;
+  padding: 20px;
+  margin: 15px 25px;
+  line-height: 1.5em;
+  /* font-size: 1.2rem; */
+  /* height: 75%; */
 }
 
-.week {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-around;
-
-  border: 5px solid #0a122a;
-  border-radius: 20px;
-  width: 160px;
-  height: 10px;
-  background-color: #0a122a;
-  color: #ffffff;
-  /* padding-top: auto; */
-}
-
-.all {
-  width: 160px;
-  font-size: 20px;
-  /* height: 55px; */
-}
-.allTime {
-  width: 160px;
-  font-size: 20px;
-  /* height: 55px; */
-}
-
-/* 768 1024 ipad 사이즈 */
-@media screen and (min-width: 768px) {
+@media screen and (min-height: 1024px) {
   .oneRecordBox {
-    /* main axiss */
-    margin-top: 10px;
-    border: 5px solid #0a122a;
-    border-radius: 20px;
-    width: 360px;
-    height: 340px;
-    margin-top: 10px;
-    font-size: 30px;
-  }
-
-  .week {
-    margin-top: 10px;
-    border: 5px solid #0a122a;
-    border-radius: 20px;
-    width: 360px;
-    height: 340px;
-    margin-top: 10px;
-  }
-
-  .all {
-    width: 310px;
-    font-size: 85px;
-    /* height: 55px; */
-  }
-  .allTime {
-    width: 310px;
-    font-size: 65px;
-    /* height: 55px; */
+    line-height: 2em;
+    font-size: 2rem;
   }
 }
 
-/* 1024 1366 ipad pro 사이즈 */
-@media screen and (min-width: 1024px) {
+@media screen and (min-height: 1366px) {
   .oneRecordBox {
-    /* main axiss */
-    border: 5px solid #0a122a;
-    border-radius: 20px;
-    width: 410px;
-    height: 450px;
-    margin-top: 40px;
-    font-size: 40px;
+    line-height: 2em;
+    font-size: 2.5rem;
+    margin: 30px 40px;
+    padding: 40px;
   }
+}
 
-  .week {
-    border: 5px solid #0a122a;
-    border-radius: 20px;
-    width: 410px;
-    height: 450px;
-    margin-top: 40px;
-  }
-
-  .all {
-    width: 310px;
-    font-size: 85px;
-    /* height: 55px; */
-  }
-  .allTime {
-    width: 310px;
-    font-size: 70px;
-    /* height: 55px; */
+@media screen and (min-width: 1025px) {
+  .oneRecordBox {
+    line-height: 2em;
+    font-size: 1.7rem;
+    margin: 55px 40px;
+    padding: 38px;
   }
 }

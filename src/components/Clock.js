@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToRecord } from "../actions/recordAction";
 import "../componentsCss/Clock.css";
 
 function Clock() {
@@ -9,9 +7,6 @@ function Clock() {
   const [hh, setHh] = useState(0);
   const [delay, setDelay] = useState(1000);
   const [tickControl, setTickControl] = useState(false);
-  // const dispatch = useDispatch();
-  // const state = useSelector((state) => state.recordReducer);
-  // const itemState = useSelector((state) => state.recordReducer);
 
   useInterval(
     () => {
@@ -27,38 +22,18 @@ function Clock() {
   );
 
   return (
-    <div className="parent">
-      <div
-        className={tickControl ? `clockGo` : `clockStop`}
-        //todo: css 파일로 옮겨주세요
-        // style={{ cursor: "pointer" }}
-        onClick={() => {
-          // console.log(state);
-          // dispatch(addToRecord(hh * 3600 + min * 60 + tick));
-          setTickControl(tickControl ? false : true);
-          setTick(tick - tick);
-          setMin(min - min);
-          setHh(hh - hh);
-          // dispatch(addToRecord(hh * 3600 + min * 60 + tick));
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          // console.log(itemState);
-
-          // console.log(state);
-        }}>
-        <div className="hhMmTickBox">
-          <div className="hhMm">
-            {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}
-          </div>
-          <span className="tick">:{tick < 10 ? `0${tick}` : tick}</span>
-        </div>
+    <div
+      className={tickControl ? `clockGo` : `clockStop`}
+      onClick={() => {
+        setTickControl(tickControl ? false : true);
+        setTick(tick - tick);
+        setMin(min - min);
+        setHh(hh - hh);
+      }}>
+      <div className="hhMm">
+        {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}
       </div>
-
-      {/* <button
-        onClick={() => {
-          setTickControl(tickControl ? false : true);
-        }}>
-        가라,멈춰라
-      </button> */}
+      <div className="tick">:{tick < 10 ? `0${tick}` : tick}</div>
     </div>
   );
 }
