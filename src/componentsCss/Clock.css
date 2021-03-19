@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+  font-family: "Jua", sans-serif;
+}
+
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center; /* main axiss */
+  align-items: center; /* cross axiss */
+  text-align: center;
+}
+
+.clockGo {
+  background-color: #0a122a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center; /* main axiss */
+  align-items: center; /* cross axiss */
+  text-align: center;
+  cursor: pointer;
+  border: 5px solid yellow;
+  border-radius: 20px;
+  padding-top: auto;
+  width: 345px;
+  height: 230px;
+  font-size: 60px;
+}
+
+.clockStop {
+  background-color: #0a122a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center; /* main axiss */
+  align-items: center; /* cross axiss */
+  text-align: center;
+  cursor: pointer;
+  border: 5px solid red;
+  border-radius: 20px;
+  padding-top: auto;
+  width: 345px;
+  height: 230px;
+  font-size: 60px;
+}
+
+.hhMmTickBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.hhMm {
+  font-size: 100px;
+}
+
+.tick {
+  font-size: 50px;
+}
+
+/* 768 1024 ipad 사이즈 */
+@media screen and (min-width: 768px) {
+  .clockGo {
+    width: 740px;
+    height: 500px;
+    margin-top: 30px;
+  }
+
+  .clockStop {
+    width: 740px;
+    height: 500px;
+    margin-top: 30px;
+  }
+
+  .hhMm {
+    font-size: 180px;
+  }
+
+  .tick {
+    font-size: 100px;
+  }
+}
+
+/* 1024 1366 ipad pro 사이즈 */
+@media screen and (min-width: 1024px) {
+  .clockGo {
+    width: 920px;
+    height: 600px;
+    margin-top: 40px;
+  }
+
+  .clockStop {
+    width: 920px;
+    height: 600px;
+    margin-top: 40px;
+  }
+
+  .hhMm {
+    font-size: 220px;
+  }
+
+  .tick {
+    font-size: 120px;
+  }
+}
