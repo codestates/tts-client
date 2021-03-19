@@ -43,7 +43,7 @@ function Clock() {
 
           // console.log(state);
         }}>
-        {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick}
+        &#x270C;&#62; {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick} &#60;&#x270C;
       </div>
 
       {/* <button
