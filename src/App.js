@@ -11,6 +11,7 @@ import SignupPage from './pages/SignupPage'
 import MyPage from './pages/MyPage'
 import WelcomePage from './pages/WelcomePage'
 
+
 function App() {
   return (
     <Router>
