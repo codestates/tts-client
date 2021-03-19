@@ -8,8 +8,8 @@ function Clock() {
   const [hh, setHh] = useState(0);
   const [delay, setDelay] = useState(1000);
   const [tickControl, setTickControl] = useState(false);
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.recordReducer);
+  // const dispatch = useDispatch();
+  // const state = useSelector((state) => state.recordReducer);
   // const itemState = useSelector((state) => state.recordReducer);
 
   useInterval(
@@ -31,8 +31,8 @@ function Clock() {
         //todo: css 파일로 옮겨주세요
         style={{ cursor: "pointer" }}
         onClick={() => {
-          console.log(state);
-          dispatch(addToRecord(hh * 3600 + min * 60 + tick));
+          // console.log(state);
+          // dispatch(addToRecord(hh * 3600 + min * 60 + tick));
           setTickControl(tickControl ? false : true);
           setTick(tick - tick);
           setMin(min - min);
@@ -43,7 +43,7 @@ function Clock() {
 
           // console.log(state);
         }}>
-        {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick}
+        &#x270C;&#62; {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}:{tick < 10 ? `0${tick}` : tick} &#60;&#x270C;
       </div>
 
       {/* <button
