@@ -1,18 +1,32 @@
 import "../componentsCss/Login.css";
-import React from "react";
+import React,{useState} from "react";
 
 function Login() {
+
+    const [email,setEmail] = useState('')
+    const [password,setPassword] = useState('')
+
+    const emailHandler =(e)=>{
+        setEmail(e.target.value)
+    }
+    const passwordHandler =(e)=>{
+        setEmail(e.target.value)
+    }
+    const submitHandler=(e)=>{
+        e.preventDefault()
+    }
+
     return (
         <div className='LoginBody'>
             <section className='LoginSec'>
-                <form className='LoginDiv'>
+                <form className='LoginDiv' onSubmit={submitHandler}>
                     <h1>hello we are TTS</h1>
                     <div className='inputLine'>
-                        <input type="text" name='id' id='id' autoComplete='off' required ></input>
+                        <input type="email" name='id' id='id' autoComplete='off' onChange={emailHandler} required ></input>
                         <label for="id">email</label>
                     </div>
                     <div className='inputLine'>
-                        <input type="password" name='pw' id='pw' autoComplete='off' required ></input>
+                        <input type="password" name='pw' id='pw' autoComplete='off' onChange={passwordHandler} required ></input>
                         <label for="pw">password</label>
                     </div>
                     <div className="LoginBtn">
