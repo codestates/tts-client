@@ -22,7 +22,7 @@ function Login() {
                 <form className='LoginDiv' onSubmit={submitHandler}>
                     <h1>hello we are TTS</h1>
                     <div className='inputLine'>
-                        <input type="email" name='id' id='id' autoComplete='off' onChange={emailHandler} required ></input>
+                        <input type="email" name='id' id='id' autoComplete='off' required ></input>
                         <label for="id">email</label>
                     </div>
                     <div className='inputLine'>
