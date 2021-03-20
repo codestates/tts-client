@@ -1,11 +1,4 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  text-decoration: none;
-  font-family: "Jua", sans-serif;
-}
-
-.gradeBox {
+.grade {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -13,36 +6,26 @@
   align-items: center; /* cross axiss */
   text-align: center;
   border: 1px solid yellow;
-  /* width: 345px; */
-  height: 40px;
-  margin-top: 5px;
+  margin: 15px 20px 0;
+  font-size: 1.5rem;
 }
 
-.grade {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-}
-
-/* 768 1024 ipad 사이즈 */
-@media screen and (min-width: 768px) {
-  .gradeBox {
-    height: 60px;
-  }
-
+@media screen and (min-height: 1024px) {
   .grade {
-    font-size: 50px;
+    font-size: 2rem;
   }
 }
 
-/* 1024 1366 ipad pro 사이즈 */
-@media screen and (min-width: 1024px) {
-  .gradeBox {
-    height: 80px;
-    margin-top: 40px;
-  }
-
+@media screen and (min-height: 1366px) {
   .grade {
-    font-size: 60px;
+    font-size: 4rem;
+    margin: 30px 40px 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .grade {
+    font-size: 4rem;
+    margin: 50px 40px 0;
   }
 }
