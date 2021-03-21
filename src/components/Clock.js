@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "../componentsCss/Clock.css";
+import { getNumberOfWeek } from "../functions/getNumberOfWeek";
+import { getNumberOfToday } from "../functions/getNumberOfToday";
+import { addToRecord } from "../actions/recordAction";
 
 function Clock() {
   const [tick, setTick] = useState(0);
@@ -7,6 +11,22 @@ function Clock() {
   const [hh, setHh] = useState(0);
   const [delay, setDelay] = useState(1000);
   const [tickControl, setTickControl] = useState(false);
+  const week = getNumberOfWeek();
+  const day = getNumberOfToday();
+  const time = hh * 3600 + min * 60 + tick;
+  const postData = { day, time, week };
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    //! 서버 연결하면 열어주기
+    if (tickControl) {
+      dispatch(addToRecord(postData));
+    }
+    setTick(tick - tick);
+    setMin(min - min);
+    setHh(hh - hh);
+    return;
+  };
 
   useInterval(
     () => {
@@ -26,10 +46,9 @@ function Clock() {
       className={tickControl ? `clockGo` : `clockStop`}
       onClick={() => {
         setTickControl(tickControl ? false : true);
-        setTick(tick - tick);
-        setMin(min - min);
-        setHh(hh - hh);
+        handleClick();
       }}>
+      {console.log(postData)}
       <div className="hhMm">
         {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}
       </div>
