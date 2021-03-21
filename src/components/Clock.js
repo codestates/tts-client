@@ -23,7 +23,7 @@ function Clock() {
 
   return (
     <div
-      className={tickControl ? `clockGo` : `clockStop`}
+      className={tickControl ? `clockHover clockGo` : `clockHover clockStop`}
       onClick={() => {
         setTickControl(tickControl ? false : true);
         setTick(tick - tick);

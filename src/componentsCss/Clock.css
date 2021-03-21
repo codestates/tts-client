@@ -41,6 +41,10 @@
   padding-top: 40px;
 }
 
+.clockHover:hover{
+  background-color: gray;
+}
+
 @media screen and (min-height: 1024px) {
   .hhMm {
     font-size: 8rem;
