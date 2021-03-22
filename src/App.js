@@ -30,7 +30,7 @@ function App() {
   }
 
   const getUserInfo = ()=>{
-    axios.get('https://api.github.com/user',{headers:{authorization:`token ${accessToken}`, Accept: 'application/json'}})
+    axios.get('https://api.github.com/user',{headers:{authorization:`token ${accessToken}`, accept: 'application/json'}})
     .then(res=>{
       const { login, id, name } = res.data;
       const param = {email: `${login}@github.com`, password: id, userName: name};
