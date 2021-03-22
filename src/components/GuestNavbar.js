@@ -23,11 +23,13 @@ function NavBar() {
             <a href="/main">초시계</a>
           </li>
           <li>
-            <a href="/mypage">마이페이지</a>
+            <a href="/" className="navBarLogin">
+              로그인
+            </a>
           </li>
           <li>
             <a href="/" className="navBarSignup">
-              로그아웃
+              회원가입
             </a>
           </li>
         </ul>
