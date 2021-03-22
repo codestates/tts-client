@@ -22,7 +22,7 @@ export function setIsLogin (){
 
 export function setLogout (){
     return {
-        type: SET_ISLOGIN,
+        type: SET_LOGOUT,
         payload: false
     };
 };

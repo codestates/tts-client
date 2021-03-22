@@ -10,8 +10,7 @@ import {useSelector} from 'react-redux'
 import GuestNavBar from "../components/GuestNavbar";
 
 function MainPage() {
-  const x = useSelector(s=>s.userReducer.isLogin)
-
+  const x = useSelector(s=>s.recordReducer.isLogin)
 
   return (
     <div className="allInBox">

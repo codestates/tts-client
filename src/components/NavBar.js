@@ -1,8 +1,20 @@
 import "../componentsCss/NavBar.css";
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
+import {setLogout} from '../actions/userAction'
+import {useDispatch} from "react-redux";
+import axios from 'axios'
+
+
 
 function NavBar() {
+  const dispatch = useDispatch()
   const [active, setActive] = useState(false);
+
+  const logoutHandler=()=>{
+    axios.get('https://localhost:5000/user/logout',{accept:'application/json',withCredentials:true}).then(res=>res.data)
+    dispatch(setLogout())
+  }
 
   // 리액트 훅스 사용 네브바 햄버거 토글 활성화 or 비활성화
   const hambergerHandler = () => {
@@ -16,19 +28,17 @@ function NavBar() {
     <div>
       <nav className="navBar">
         <div className="navBarLogo">
-          <a href="/">tts</a>
+          <a href="/welcome">tts</a>
         </div>
         <ul className={`navBarMenu ${active ? "active" : ""}`}>
           <li>
-            <a href="/main">초시계</a>
+            <Link to='/main'>초시계</Link>
           </li>
           <li>
-            <a href="/mypage">마이페이지</a>
+            <Link to='/mypage'>마이페이지</Link>
           </li>
           <li>
-            <a href="/" className="navBarSignup">
-              로그아웃
-            </a>
+            <Link to='/' className="navBarSignup" onClick={logoutHandler}>로그아웃</Link>
           </li>
         </ul>
         <a className="navBarHambeger" href="/#" onClick={hambergerHandler}>
