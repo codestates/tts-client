@@ -3,6 +3,7 @@ export const SET_ISLOGIN = "SET_ISLOGIN";
 export const SET_LOGOUT = "SET_LOGOUT";
 const axios = require("axios");
 
+
 export function setUserInfo() {
   return axios
     .get("https://localhost:5000/user/userinfo", { accept: "application/json", withCredentials: true })
@@ -15,6 +16,7 @@ export function setUserInfo() {
     });
 }
 
+
 export function setIsLogin() {
   return {
     type: SET_ISLOGIN,
@@ -24,7 +26,7 @@ export function setIsLogin() {
 
 export function setLogout() {
   return {
-    type: SET_ISLOGIN,
+    type: SET_LOGOUT,
     payload: false,
   };
 }

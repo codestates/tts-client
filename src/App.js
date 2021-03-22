@@ -20,7 +20,6 @@ import {useSelector} from 'react-redux'
 function App() {
   const dispatch = useDispatch()
   const [accessToken,setAccessToken] = useState('') 
-  const [userInfo,setUserInfo] = useState({})
 
 
   const getAccessToken =(authorizationCode)=>{
@@ -33,7 +32,6 @@ function App() {
     .then(res=>{
       dispatch(setIsLogin())
       console.log(res.data)
-      // setUserInfo(data)
     })
   }
 
@@ -52,8 +50,7 @@ function App() {
 
   useEffect(()=>{
     
-  },[useSelector(s=>s.userReducer.isLogin)])
-
+  },[useSelector(s=>s.recordReducer.isLogin)])
 
 
   return (
@@ -62,7 +59,7 @@ function App() {
       <Switch>
       <Route  exact path="/" component={LoginPage}/>
       <Route  path="/main" component={MainPage}/>
-      <Route  path="/welcome" render={() => <WelcomePage userInfo={userInfo} />}/>
+      <Route  path="/welcome" component={WelcomePage}/>
       <Route  path="/signup" component={SignupPage}/>
       <Route  path="/mypage" component={MyPage}/>
       </Switch>

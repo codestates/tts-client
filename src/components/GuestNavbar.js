@@ -1,5 +1,6 @@
 import "../componentsCss/NavBar.css";
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const [active, setActive] = useState(false);
@@ -16,21 +17,17 @@ function NavBar() {
     <div>
       <nav className="navBar">
         <div className="navBarLogo">
-          <a href="/">tts</a>
+          <a href="/welcome">tts</a>
         </div>
         <ul className={`navBarMenu ${active ? "active" : ""}`}>
           <li>
-            <a href="/main">초시계</a>
+          <Link to='/main'>초시계</Link>
           </li>
           <li>
-            <a href="/" className="navBarLogin">
-              로그인
-            </a>
+            <Link to='/' >로그인</Link>
           </li>
           <li>
-            <a href="/" className="navBarSignup">
-              회원가입
-            </a>
+            <Link to='/' className='navBarSignup'>회원가입</Link>
           </li>
         </ul>
         <a className="navBarHambeger" href="/#" onClick={hambergerHandler}>

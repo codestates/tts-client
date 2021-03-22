@@ -12,12 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { axiosData, setRecords } from "../actions/recordAction";
 
 function MainPage() {
-  const x = useSelector((s) => s.userReducer.isLogin);
-  const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(axiosData("https://localhost:5000/user/record", setRecords));
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
+  const x = useSelector(s=>s.recordReducer.isLogin)  
 
   return (
     <div className="allInBox">
