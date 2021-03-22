@@ -40,26 +40,12 @@ function Login(props) {
           history.push("/login");
           alert("no member");
         }
-
-        axios.post('https://localhost:5000/main/login',body,{accept:'application/json',withCredentials:true}).then(res=>res.data)
-        .then(data=>{
-            if(data.message==='login successfully'){
-                // useSelector.
-                dispatch(setIsLogin())
-                dispatch(setUserInfo())
-                history.push('/main')
-            } else {
-                history.push('/login')
-                alert('no member')
-            }
-        })
-    }
-            
-    const guestHandler=(e)=>{
-        dispatch(setLogout())
-        history.push('/welcome')
-    }
-
+      });
+  };
+  const guestHandler = (e) => {
+    dispatch(setLogout());
+    history.push("/welcome");
+  };
 
   return (
     <div className="LoginBody">
