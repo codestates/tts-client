@@ -7,6 +7,8 @@ import NowStudyTime from "../components/NowStudyTime";
 import "../componentsCss/MainPage.css";
 
 function MainPage() {
+  //! 로그인 상태에 따라 랜더할지말지 선택할수있게
+
   return (
     <div className="allInBox">
       <NavBar />
