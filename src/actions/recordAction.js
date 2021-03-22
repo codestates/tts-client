@@ -1,10 +1,40 @@
 export const ADD_TO_RECORD = "ADD_TO_RECORD";
+export const SET_RECORDS = "SET_RECORDS";
 
-export const addToRecord = (record) => {
+const axios = require("axios");
+
+export const axiosData = (api, action) => (dispatch) => {
+  return axios(api, { "Content-Type": "application/json", withCredentials: true })
+    .then((res) => {
+      dispatch(action(res));
+    })
+    .catch((err) => console.log(err));
+};
+
+export async function addToRecord(recordData) {
+  await axios
+    .post("http://localhost:5000", recordData, { "Content-Type": "application/json", withCredentials: true })
+    .then((res) => console.log(res))
+    .catch((e) => console.log(e));
+
+  const getWeeklyRecord = await axios
+    .get("http://localhost:5000", { "Content-Type": "application/json", withCredentials: true })
+    .then((res) => res.data)
+    .catch((e) => console.log(e));
+
   return {
     type: ADD_TO_RECORD,
     payload: {
-      record,
+      getWeeklyRecord,
+    },
+  };
+}
+
+export const setRecords = (records) => {
+  return {
+    type: SET_RECORDS,
+    payload: {
+      records,
     },
   };
 };
