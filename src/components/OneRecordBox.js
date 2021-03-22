@@ -18,7 +18,7 @@ function OneRecordBox() {
         ? records[thisWeek].map((dayTime, idx) => {
             return <OneRecord dayTime={dayTime} idx={idx} key={idx} dayCount={dayCount} />;
           })
-        : "로딩중입니다"}
+        : "데이터가 없습니다"}
     </div>
   );
 }
