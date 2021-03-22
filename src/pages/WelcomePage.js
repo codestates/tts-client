@@ -1,23 +1,20 @@
-import React from "react";
+// import React,{useState,useEffect} from "react";
 import NavBar from "../components/NavBar";
-import {useSelector} from 'react-redux'
 import GuestNavBar from "../components/GuestNavbar";
+import {useSelector} from 'react-redux'
+// import axios from 'axios'
+function WelcomePage(props) {
 
-
-
-function MyPage() {
   const x = useSelector(s=>s.userReducer.isLogin)
 
   return (
     <div>
-      {x ? (
+       {x ? (
             <NavBar />
          ) : (
             <GuestNavBar/>
-      )}
-      
+            )}
     </div>
   );
 }
-
-export default MyPage;
+export default WelcomePage;

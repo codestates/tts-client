@@ -1,0 +1,97 @@
+.clockGo {
+  background-color: #0a122a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: 5px solid yellow;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 15px 20px 0;
+  width: 700px;
+  /* height: 70%; */
+}
+
+.clockStop {
+  background-color: #0a122a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  border: 5px solid red;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 15px 20px 0;
+  width: 700px;
+  /* height: 80%; */
+}
+
+.hhMm {
+  font-size: 5rem;
+}
+
+.tick {
+  font-size: 2rem;
+  padding-top: 40px;
+}
+
+
+
+@media screen and (min-height: 1024px) {
+  .hhMm {
+    font-size: 8rem;
+  }
+
+  .tick {
+    font-size: 2.5rem;
+    padding-top: 60px;
+  }
+}
+
+@media screen and (min-height: 1366px) {
+  .hhMm {
+    font-size: 10rem;
+  }
+
+  .tick {
+    font-size: 3rem;
+    padding-top: 70px;
+  }
+
+  .clockStop {
+    margin: 30px 40px 0;
+  }
+
+  .clockGo {
+    margin: 30px 40px 0;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .hhMm {
+    font-size: 11rem;
+  }
+
+  .tick {
+    font-size: 4rem;
+    padding-top: 80px;
+  }
+
+  .clockStop {
+    margin: 60px 40px 0;
+    height: 60%;
+  }
+
+  .clockGo {
+    margin: 60px 40px 0;
+    height: 60%;
+  }
+}
