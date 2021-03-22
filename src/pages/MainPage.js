@@ -5,11 +5,19 @@ import OneRecordBox from "../components/OneRecordBox";
 import Grade from "../components/Grade";
 import NowStudyTime from "../components/NowStudyTime";
 import "../componentsCss/MainPage.css";
+import {useSelector} from 'react-redux'
+import GuestNavBar from "../components/GuestNavbar";
 
 function MainPage() {
+  const x = useSelector(s=>s.userReducer.isLogin)
+
   return (
     <div className="allInBox">
-      <NavBar />
+      {x ? (
+            <NavBar />
+         ) : (
+            <GuestNavBar/>
+      )}
       <div className="exceptNavBar">
         <div className="mainPageASide">
           <Grade className="grade" />
