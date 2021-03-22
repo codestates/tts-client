@@ -12,15 +12,18 @@ export const axiosData = (api, action) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export async function addToRecord(recordData) {
+export const addToRecord = async (recordData) => {
   await axios
     .post("https://localhost:5000/user/record", recordData, { accept: "application/json", withCredentials: true })
     .then((res) => console.log(res))
+
     .catch((e) => console.log(e));
 
   const getWeeklyRecord = await axios
-    .get("https://localhost:5000/uesr/record", { accept: "application/json", withCredentials: true })
-    .then((res) => res.data.data.Coding)
+    .get("https://localhost:5000/user/record", { accept: "application/json", withCredentials: true })
+    .then((res) => {
+      return res.data.data.Coding;
+    })
     .catch((e) => console.log(e));
 
   return {
@@ -29,7 +32,7 @@ export async function addToRecord(recordData) {
       getWeeklyRecord,
     },
   };
-}
+};
 
 export const setRecords = (records) => {
   return {

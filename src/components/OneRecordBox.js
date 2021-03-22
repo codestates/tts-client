@@ -15,7 +15,7 @@ function OneRecordBox() {
   return (
     <div className="oneRecordBox">
       {Object.keys(records).length !== 0
-        ? records[1].map((dayTime, idx) => {
+        ? records[thisWeek].map((dayTime, idx) => {
             return <OneRecord dayTime={dayTime} idx={idx} key={idx} dayCount={dayCount} />;
           })
         : "로딩중입니다"}

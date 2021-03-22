@@ -20,25 +20,7 @@ function Login(props) {
   const passwordHandler = (e) => {
     setPassword(e.target.value);
   };
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-  //   const body = {
-  //     email,
-  //     password,
-  //   };
-  //   await axios.post("https://localhost:5000/main/login", body, { accept: "application/json", withCredentials: true }).then((res) => {
-  //     console.log(res.data);
-  //     if (res.data.message === "login successfully") {
-  //       dispatch(setIsLogin());
-  //       dispatch(setUserInfo(body)).then((res) => {
-  //         history.push("/main");
-  //       });
-  //     } else {
-  //       history.push("/login");
-  //       alert("no member");
-  //     }
-  //   });
-  // };
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const body = {
@@ -50,9 +32,9 @@ function Login(props) {
       .then((res) => res.data)
       .then((data) => {
         if (data.message === "login successfully") {
+          dispatch(axiosData("https://localhost:5000/user/record", setRecords));
           dispatch(setIsLogin());
           dispatch(setUserInfo());
-          dispatch(axiosData("https://localhost:5000/user/record", setRecords));
           history.push("/main");
         } else {
           history.push("/login");
