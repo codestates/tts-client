@@ -6,9 +6,8 @@ import GuestNavBar from "../components/GuestNavbar";
 
 
 function MyPage() {
-  const x = useSelector(s=>s.userReducer.isLogin)
+  const x = useSelector(s=>s.recordReducer.isLogin)
 
-  console.log(useSelector(s=>s.recordReducer.isLogin))
   return (
     <div>
       {x ? (
