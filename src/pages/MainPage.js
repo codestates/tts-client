@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import NavBar from "../components/NavBar";
 import Clock from "../components/Clock";
 import OneRecordBox from "../components/OneRecordBox";
@@ -10,6 +11,7 @@ import GuestNavBar from "../components/GuestNavbar";
 
 function MainPage() {
   const x = useSelector(s=>s.userReducer.isLogin)
+
 
   return (
     <div className="allInBox">

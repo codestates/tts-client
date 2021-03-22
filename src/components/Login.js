@@ -43,41 +43,40 @@ function Login(props) {
         history.push('/welcome')
     }
 
-
     return (
-        <div className='LoginBody'>
-            <section className='LoginSec'>
-                <form className='LoginDiv'  onSubmit={submitHandler}>
-                    <h1>hello we are TTS</h1>
-                    <div className='inputLine'>
-                        <input type="text" name='id' id='id' autoComplete='off'  onChange={emailHandler} required ></input>
-                        <label htmlFor="id">email</label>
-                    </div>
-                    <div className='inputLine'>
-                        <input type="password" name='pw' id='pw' autoComplete='off' onChange={passwordHandler} required ></input>
-                        <label htmlFor="pw">password</label>
-                    </div>
-                    <div className="LoginBtn">
-                            <button type="submit">LOGIN</button>
-                    </div>
-                    <div className="LoginBtn">
-                            <button type="button">SignUp</button>
-                    </div>
-                    <div className="SignUpBtn">
-                            <button type="button" onClick={guestHandler}>Guest?</button>
-                    </div>
-                    <div className='OauthDiv'>
-                        <div className="AuthGithub">
-                            <a href={githubUrl}><i className="fab fa-github"></i></a>
-                        </div>
-                        <div className='or'>or</div>
-                        <div className="AuthGoogle">
-                            <a href='/#'><i className="fab fa-google"></i></a>
-                        </div>
-                    </div>
-                </form>
-            </section>
-    </div>
+      <div className='LoginBody'>
+          <section className='LoginSec'>
+              <form className='LoginDiv'  onSubmit={submitHandler}>
+                  <h1>hello we are TTS</h1>
+                  <div className='inputLine'>
+                      <input type="text" name='id' id='id' autoComplete='off'  onChange={emailHandler} required ></input>
+                      <label htmlFor="id">email</label>
+                  </div>
+                  <div className='inputLine'>
+                      <input type="password" name='pw' id='pw' autoComplete='off' onChange={passwordHandler} required ></input>
+                      <label htmlFor="pw">password</label>
+                  </div>
+                  <div className="LoginBtn">
+                          <button type="submit">LOGIN</button>
+                  </div>
+                  <div className="LoginBtn">
+                          <button type="button">SignUp</button>
+                  </div>
+                  <div className="SignUpBtn">
+                          <button type="button" onClick={guestHandler}>Guest?</button>
+                  </div>
+                  <div className='OauthDiv'>
+                      <div className="AuthGithub">
+                          <a href={githubUrl}><i className="fab fa-github"></i></a>
+                      </div>
+                      <div className='or'>or</div>
+                      <div className="AuthGoogle">
+                          <a href='/#'><i className="fab fa-google"></i></a>
+                      </div>
+                  </div>
+              </form>
+          </section>
+      </div>
   );
 }
 

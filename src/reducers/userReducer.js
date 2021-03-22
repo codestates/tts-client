@@ -1,10 +1,11 @@
 import { SET_USERINFO,SET_LOGOUT,SET_ISLOGIN } from "../actions/userAction";
 import  {initialState}  from "./initialState";
 const userReducer = (state = initialState, action) => {
+
   switch (action.type) {
     case SET_USERINFO:
       return {
-          ...state,
+        ...state,
         user: { ...action.payload },
       };
     case SET_ISLOGIN:
@@ -21,6 +22,5 @@ const userReducer = (state = initialState, action) => {
       return state;
     }
 };
-
 
 export default userReducer;
