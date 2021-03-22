@@ -14,7 +14,7 @@ const recordReducer = (state = initialState, action) => {
     case SET_RECORDS:
       return {
         ...state,
-        ...action.payload.records,
+        records: { ...action.payload.records },
       };
     default:
       return state;

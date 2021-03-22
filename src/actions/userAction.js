@@ -4,7 +4,7 @@ export const SET_LOGOUT = "SET_LOGOUT";
 const axios = require("axios");
 
 export function setUserInfo() {
-  const response = axios.get("http://localhost:5000/user/userinfo", { withCredentials: true }).then((res) => res.data);
+  const response = axios.get("https://localhost:5000/user/userinfo", { withCredentials: true }).then((res) => res.data);
 
   return {
     type: SET_USERINFO,
