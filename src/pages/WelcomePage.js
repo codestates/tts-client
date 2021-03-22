@@ -6,7 +6,6 @@ import {useSelector} from 'react-redux'
 function WelcomePage(props) {
 
   const x = useSelector(s=>s.userReducer.isLogin)
-
   return (
     <div>
        {x ? (
