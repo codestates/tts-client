@@ -20,7 +20,6 @@ import {useSelector} from 'react-redux'
 function App() {
   const dispatch = useDispatch()
   const [accessToken,setAccessToken] = useState('') 
-  const [userInfo,setUserInfo] = useState({})
 
 
   const getAccessToken =(authorizationCode)=>{
@@ -32,6 +31,7 @@ function App() {
   const getUserInfo = ()=>{
     axios.get('https://api.github.com/user',{headers:{authorization:`token ${accessToken}`, accept: 'application/json'}})
     .then(res=>{
+
       const { login, id, name } = res.data;
       const param = {email: `${login}@github.com`, password: id, userName: name};
       axios.post('https://localhost:5000/main/signup', param, {headers: {accept: 'application/json'}})
@@ -43,6 +43,7 @@ function App() {
           dispatch(setIsLogin());
         })
       })
+
     })
   }
 
@@ -61,8 +62,7 @@ function App() {
 
   useEffect(()=>{
     
-  },[useSelector(s=>s.userReducer.isLogin)])
-
+  },[useSelector(s=>s.recordReducer.isLogin)])
 
 
   return (
@@ -71,7 +71,7 @@ function App() {
       <Switch>
       <Route  exact path="/" component={LoginPage}/>
       <Route  path="/main" component={MainPage}/>
-      <Route  path="/welcome" render={() => <WelcomePage userInfo={userInfo} />}/>
+      <Route  path="/welcome" component={WelcomePage}/>
       <Route  path="/signup" component={SignupPage}/>
       <Route  path="/mypage" component={MyPage}/>
       </Switch>
