@@ -27,16 +27,19 @@ function Login(props) {
             email,
             password
         }
-        const response =axios.post('http://localhost:5000/main/login',body,{withCredentials:true}).then(res=>res.data)
-        if(response.data.message==='login successfully'){
-            dispatch(setIsLogin())
-            dispatch(setUserInfo(body))
-            .then(res=>{ history.push('/main')})
+        axios.post('https://localhost:5000/main/login',body,{accept:'application/json',withCredentials:true}).then(res=>res.data)
+        .then(data=>{
+            if(data.message==='login successfully'){
+                // useSelector.
+                dispatch(setIsLogin())
+                dispatch(setUserInfo())
+                history.push('/main')
             } else {
-                    history.push('/login')
-                    alert('no member')
-                }
+                history.push('/login')
+                alert('no member')
             }
+        })
+    }
             
     const guestHandler=(e)=>{
         dispatch(setLogout())
