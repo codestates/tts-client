@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import "../componentsCss/Clock.css";
 import { getNumberOfWeek } from "../functions/getNumberOfWeek";
 import { getNumberOfToday } from "../functions/getNumberOfToday";
@@ -14,8 +14,9 @@ function Clock() {
   const week = getNumberOfWeek();
   const day = getNumberOfToday();
   const time = hh * 3600 + min * 60 + tick;
-  const postData = { day, time, week };
+  const postData = { day, time, week, recordName: "Coding" };
   const dispatch = useDispatch();
+  // console.log(postData);
 
   const handleClick = () => {
     //! 서버 연결하면 열어주기
@@ -48,7 +49,7 @@ function Clock() {
         setTickControl(tickControl ? false : true);
         handleClick();
       }}>
-      {console.log(postData)}
+      {/* {console.log(postData)} */}
       <div className="hhMm">
         {hh < 10 ? `0${hh}` : hh}:{min < 10 ? `0${min}` : min}
       </div>

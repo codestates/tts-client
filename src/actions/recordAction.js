@@ -4,22 +4,23 @@ export const SET_RECORDS = "SET_RECORDS";
 const axios = require("axios");
 
 export const axiosData = (api, action) => (dispatch) => {
-  return axios(api, { "Content-Type": "application/json", withCredentials: true })
+  return axios(api, { accept: "application/json", withCredentials: true })
     .then((res) => {
-      dispatch(action(res));
+      // console.log(res);
+      dispatch(action(res.data.data.Coding));
     })
     .catch((err) => console.log(err));
 };
 
 export async function addToRecord(recordData) {
   await axios
-    .post("http://localhost:5000", recordData, { "Content-Type": "application/json", withCredentials: true })
+    .post("https://localhost:5000/user/record", recordData, { accept: "application/json", withCredentials: true })
     .then((res) => console.log(res))
     .catch((e) => console.log(e));
 
   const getWeeklyRecord = await axios
-    .get("http://localhost:5000", { "Content-Type": "application/json", withCredentials: true })
-    .then((res) => res.data)
+    .get("https://localhost:5000/uesr/record", { accept: "application/json", withCredentials: true })
+    .then((res) => res.data.data.Coding)
     .catch((e) => console.log(e));
 
   return {
