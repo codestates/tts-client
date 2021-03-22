@@ -24,15 +24,16 @@ function App() {
 
 
   const getAccessToken =(authorizationCode)=>{
-    axios.post('http://localhost:5000/callback', { authorizationCode: authorizationCode })
-    .then(res=> setAccessToken(res.data.accessToken))
+    axios.post('https://localhost:5000/main/oauth/accesstoken', { authorizationCode: authorizationCode,accept:'application/json',withCredentials:true})
+    .then(res=> setAccessToken(res.data.data.accessToken))
   }
 
   const getUserInfo = ()=>{
     axios.get('https://api.github.com/user',{headers:{authorization:`token ${accessToken}`}})
-    .then(data=>{
+    .then(res=>{
       dispatch(setIsLogin())
-      setUserInfo(data.data)
+      console.log(res.data)
+      // setUserInfo(data)
     })
   }
 

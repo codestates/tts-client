@@ -6,12 +6,13 @@
 .pnp.js
 .github
 .vscode
-
+.pem
 # testing
 /coverage
 
 # production
 /build
+.env
 
 # misc
 .DS_Store
