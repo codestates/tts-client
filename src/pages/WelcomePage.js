@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux'
 // import axios from 'axios'
 function WelcomePage(props) {
 
-  const x = useSelector(s=>s.userReducer.isLogin)
+  const x = useSelector(s=>s.recordReducer.isLogin)
   return (
     <div>
        {x ? (

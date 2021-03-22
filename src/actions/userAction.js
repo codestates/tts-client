@@ -14,12 +14,6 @@ export function setUserInfo (){
     })
 };
 
-  return {
-    type: SET_USERINFO,
-    payload: response.data,
-  };
-}
-
 export function setIsLogin() {
   return {
     type: SET_ISLOGIN,
@@ -29,7 +23,7 @@ export function setIsLogin() {
 
 export function setLogout() {
   return {
-    type: SET_ISLOGIN,
+    type: SET_LOGOUT,
     payload: false,
   };
 }
