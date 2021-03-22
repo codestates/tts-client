@@ -3,3 +3,5 @@ export const initialState = {
   records: {},
   isLogin: false,
 };
+
+const hello = "world";
