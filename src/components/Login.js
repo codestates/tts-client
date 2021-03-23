@@ -2,7 +2,7 @@ import "../componentsCss/Login.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUserInfo, setIsLogin, setLogout } from "../actions/userAction";
-import { setIsLoading } from '../actions/LoadingAction'
+import { setIsLoading } from "../actions/LoadingAction";
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -16,19 +16,12 @@ function Login(props) {
   const [showModal, setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
-<<<<<<< HEAD
   const ModalHandler = () => {
     setShowModal(!showModal);
   };
-=======
   const oAuthHandler = () => {
-    window.location.assign(githubUrl)
-  }
-
-  const ModalHandler=()=>{
-    setShowModal(!showModal)
-  }
->>>>>>> a447c1e79944fabc8a0e9e229adba5c3491241af
+    window.location.assign(githubUrl);
+  };
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
