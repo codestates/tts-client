@@ -13,9 +13,9 @@ export default function NowStudyTime() {
       ? records[thisWeek]
           .filter((x) => x !== null)
           .reduce((acc, cur) => {
-            return (acc + cur) / 3600;
+            return acc + cur;
           })
       : false;
 
-  return <div className="week">{allRecordsWeek === false ? "로딩중입니다" : `이번주 ${parseInt(allRecordsWeek / 3600)} 시간 ${parseInt((allRecordsWeek % 3600) / 60)} 분`}</div>;
+  return <div className="week">{allRecordsWeek === false ? "데이터가 없습니다" : `이번주 ${parseInt(allRecordsWeek / 3600)} 시간 ${parseInt((allRecordsWeek % 3600) / 60)} 분`}</div>;
 }
