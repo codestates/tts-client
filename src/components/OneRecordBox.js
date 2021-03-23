@@ -13,7 +13,7 @@ function OneRecordBox() {
 
   return (
     <div className="oneRecordBox">
-      {Object.keys(records).length !== 0
+      {thisWeek in records
         ? records[thisWeek].map((dayTime, idx) => {
             return <OneRecord dayTime={dayTime} idx={idx} key={idx} dayCount={dayCount} />;
           })

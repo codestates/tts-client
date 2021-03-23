@@ -61,11 +61,6 @@ function App() {
     getUserInfo()
   },[accessToken])
 
-
-  useEffect(()=>{
-  },[useSelector(s=>s.recordReducer.isLogin)])
-
-
   return (
     isLoading ? <Loading /> :
     <Router>
