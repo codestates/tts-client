@@ -32,13 +32,16 @@ function NavBar() {
         </div>
         <ul className={`navBarMenu ${active ? "active" : ""}`}>
           <li>
+          <Link to='/welcome'>Home</Link>
+          </li>
+          <li>
             <Link to='/main'>초시계</Link>
           </li>
           <li>
-            <Link to='/mypage'>마이페이지</Link>
+            <Link to='/mypage'>Mypage</Link>
           </li>
           <li>
-            <Link to='/' className="navBarSignup" onClick={logoutHandler}>로그아웃</Link>
+            <Link to='/' className="navBarSignup" onClick={logoutHandler}>Logout</Link>
           </li>
         </ul>
         <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>

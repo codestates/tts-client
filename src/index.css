@@ -5,10 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:orange;
+  background-color:#0a122a;
   /* background-image: url('./tts2.svg'); */
   /* background-size: cover; */
   /* height: 1738px; */
+  font-weight: bold;
 }
 
 code {

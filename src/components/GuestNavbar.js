@@ -27,13 +27,16 @@ function NavBar() {
         </div>
         <ul className={`navBarMenu ${active ? "active" : ""}`}>
           <li>
+          <Link to='/welcome'>Home</Link>
+          </li>
+          <li>
           <Link to='/main'>초시계</Link>
           </li>
           <li>
-            <Link to='/' >로그인</Link>
+            <Link to='/' >Login</Link>
           </li>
           <li>
-            <Link className='navBarSignup' onClick={ModalHandler}>회원가입</Link>
+            <Link className='navBarSignup' onClick={ModalHandler}>Sign Up</Link>
           </li>
         </ul>
         <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>

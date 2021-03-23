@@ -1,0 +1,76 @@
+.SignUpBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    flex-grow: 2;
+}
+
+
+.SignUpDiv{
+    position: relative;
+    z-index: 2;
+}
+
+.SignUpDiv h1{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.inputLine{
+    width: 400px;
+    position: relative;
+    margin-top: 20px;
+}
+.inputLine:first-child{
+    margin-top: 0;
+}
+.inputLine input{
+    width: 95%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    color: white;
+    outline: none;
+}
+
+.inputLine label{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    color: gray;
+    transition: top .5s ease;
+
+}
+.inputLine input:focus +label,
+.inputLine input:valid +label{
+    top: -2px;
+    font-size: 13px;
+    color: #166cea;
+
+}
+
+.LoginBtn, .SignUpBtn{
+    margin-top: 30px;
+}
+
+
+.LoginBtn button, .SignUpBtn button{
+    width: 100%;
+    height: 40px;
+    background-color: #166cea;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+}
+
+.SignUpBtn button{
+    background-color: gray;
+
+}

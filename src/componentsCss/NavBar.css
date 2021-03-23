@@ -2,14 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0a122a;
+  background-color: white;
   padding: 8px 12px;
   border-bottom: 5px solid;
 }
 
 .navBar a {
   text-decoration: none;
+  color: orange;
   color: #ffbf00;
+  color: #0a122a;
 }
 
 .navBarLogo {

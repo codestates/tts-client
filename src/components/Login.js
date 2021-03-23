@@ -5,6 +5,8 @@ import { setUserInfo, setIsLogin, setLogout } from "../actions/userAction";
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import ModalPage from '../pages/ModalPage'
+
 
 function Login(props) {
   const history = useHistory();
@@ -14,6 +16,7 @@ function Login(props) {
   const githubUrl = "https://github.com/login/oauth/authorize?client_id=deacb4e14d3c7d66ffcf";
   const [showModal,setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
+
 
 
   const ModalHandler=()=>{
@@ -33,8 +36,7 @@ function Login(props) {
       email,
       password,
     };
-    await axios
-      .post("https://localhost:5000/main/login", body, { accept: "application/json", withCredentials: true })
+    await axios.post("https://localhost:5000/main/login", body, { accept: "application/json", withCredentials: true })
       .then((res) => res.data)
       .then((data) => {
         if (data.message === "login successfully") {
@@ -43,10 +45,11 @@ function Login(props) {
           dispatch(setUserInfo());
           history.push("/main");
         } else {
-          history.push("/login");
+          // history.push("/login");
           alert("no member");
         }
-      });
+      })
+      .catch(e=>alert('no member'))
   };
   const guestHandler = (e) => {
     dispatch(setLogout());
@@ -54,6 +57,7 @@ function Login(props) {
   };
 
   return (
+    <>
     <div className="LoginBody">
       <section className="LoginSec">
         <form className="LoginDiv" onSubmit={submitHandler}>
@@ -93,6 +97,11 @@ function Login(props) {
         </form>
       </section>
     </div>
+   
+    <>
+      <ModalPage showModal={showModal} setShowModal={setShowModal}></ModalPage>
+    </>
+    </>
   );
 }
 

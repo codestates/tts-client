@@ -14,6 +14,8 @@ import ModalPage from './pages/ModalPage'
 import MyPage from './pages/MyPage'
 import WelcomePage from './pages/WelcomePage'
 import Loading from './pages/Loading'
+import { useHistory } from "react-router-dom";
+
 import {useSelector} from 'react-redux'
 
  
@@ -22,6 +24,7 @@ function App() {
   const dispatch = useDispatch()
   const [accessToken,setAccessToken] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory();
 
 
   const getAccessToken =(authorizationCode)=>{
@@ -44,9 +47,11 @@ function App() {
           dispatch(setUserInfo());
         }).then(d => {setIsLoading(false)})
       })
-    }).catch(e => {
-      alert('OAuth 요청에 실패하였습니다.');
     })
+    // .catch(e => {
+    //   alert('OAuth 요청에 실패하였습니다.');
+    //   history.push("/login");
+    // })
   }
 
   useEffect(() => {
