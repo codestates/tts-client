@@ -1,9 +1,15 @@
 import "../componentsCss/NavBar.css";
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import ModalPage from '../pages/ModalPage'
 
 function NavBar() {
   const [active, setActive] = useState(false);
+  const [showModal,setShowModal] = useState(false);
+
+  const ModalHandler=()=>{
+    setShowModal(!showModal)
+  }
 
   // 리액트 훅스 사용 네브바 햄버거 토글 활성화 or 비활성화
   const hambergerHandler = () => {
@@ -27,13 +33,14 @@ function NavBar() {
             <Link to='/' >로그인</Link>
           </li>
           <li>
-            <Link to='/' className='navBarSignup'>회원가입</Link>
+            <Link className='navBarSignup' onClick={ModalHandler}>회원가입</Link>
           </li>
         </ul>
         <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>
           <i className="fas fa-bars"></i>
         </Link>
       </nav>
+      <ModalPage showModal={showModal} setShowModal={setShowModal}></ModalPage>
     </div>
   );
 }
