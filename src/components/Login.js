@@ -12,13 +12,12 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const githubUrl = "https://github.com/login/oauth/authorize?client_id=deacb4e14d3c7d66ffcf";
-  const [showModal,setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
-
-  const ModalHandler=()=>{
-    setShowModal(!showModal)
-  }
+  const ModalHandler = () => {
+    setShowModal(!showModal);
+  };
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -70,7 +69,9 @@ function Login(props) {
             <button type="submit">LOGIN</button>
           </div>
           <div className="LoginBtn">
-            <button type="button" onClick={ModalHandler}>SignUp</button>
+            <button type="button" onClick={ModalHandler}>
+              SignUp
+            </button>
           </div>
           <div className="SignUpBtn">
             <button type="button" onClick={guestHandler}>
