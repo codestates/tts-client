@@ -9,7 +9,6 @@ function OneRecordBox() {
 
   const state = useSelector((state) => state.recordReducer);
   const { records } = state;
-  console.log("records:", records);
   const dayCount = ["월", "화", "수", "목", "금", "토", "일"];
 
   return (
