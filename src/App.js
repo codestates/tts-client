@@ -10,7 +10,7 @@ import axios from 'axios'
 import React,{useState, useEffect} from "react";
 import MainPage from './pages/MainPage'
 import LoginPage from './pages/LoginPage'
-import SignupPage from './pages/SignupPage'
+import ModalPage from './pages/ModalPage'
 import MyPage from './pages/MyPage'
 import WelcomePage from './pages/WelcomePage'
 import {useSelector} from 'react-redux'
@@ -67,7 +67,7 @@ function App() {
       <Route  exact path="/" component={LoginPage}/>
       <Route  path="/main" component={MainPage}/>
       <Route  path="/welcome" component={WelcomePage}/>
-      <Route  path="/signup" component={SignupPage}/>
+      <Route  path="/signup" component={ModalPage}/>
       <Route  path="/mypage" component={MyPage}/>
       </Switch>
     </div>
