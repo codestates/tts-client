@@ -2,6 +2,7 @@ import "../componentsCss/Login.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUserInfo, setIsLogin, setLogout } from "../actions/userAction";
+import { setIsLoading } from '../actions/LoadingAction'
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -15,6 +16,9 @@ function Login(props) {
   const [showModal,setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
+  const oAuthHandler = () => {
+    window.location.assign(githubUrl)
+  }
 
   const ModalHandler=()=>{
     setShowModal(!showModal)
@@ -33,6 +37,7 @@ function Login(props) {
       email,
       password,
     };
+    dispatch(setIsLoading(true));
     await axios
       .post("https://localhost:5000/main/login", body, { accept: "application/json", withCredentials: true })
       .then((res) => res.data)
@@ -42,6 +47,7 @@ function Login(props) {
           dispatch(setIsLogin());
           dispatch(setUserInfo());
           history.push("/main");
+          dispatch(setIsLoading(false));
         } else {
           history.push("/login");
           alert("no member");
@@ -79,9 +85,9 @@ function Login(props) {
           </div>
           <div className="OauthDiv">
             <div className="AuthGithub">
-              <a href={githubUrl}>
+              <div onClick={oAuthHandler}>
                 <i className="fab fa-github"></i>
-              </a>
+              </div>
             </div>
             <div className="or">or</div>
             <div className="AuthGoogle">

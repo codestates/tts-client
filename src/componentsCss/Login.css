@@ -85,6 +85,7 @@
 }
 
 .AuthGithub{
+    cursor: pointer;
     margin-left: 100px;
     text-align: center;
 }
