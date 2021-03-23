@@ -30,10 +30,9 @@ function NavBar() {
             <Link to='/' className='navBarSignup'>회원가입</Link>
           </li>
         </ul>
-        <a className="navBarHambeger" href="/#" onClick={hambergerHandler}>
-          {" "}
+        <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>
           <i className="fas fa-bars"></i>
-        </a>
+        </Link>
       </nav>
     </div>
   );

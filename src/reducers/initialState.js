@@ -4,4 +4,3 @@ export const initialState = {
   isLogin:false
 };
 
-const hello = "world";
