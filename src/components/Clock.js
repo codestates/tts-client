@@ -16,7 +16,6 @@ function Clock() {
   const time = hh * 3600 + min * 60 + tick;
   const postData = { day, time, week, recordName: "Coding" };
   const dispatch = useDispatch();
-  // console.log(postData);
 
   const handleClick = () => {
     //! 서버 연결하면 열어주기
