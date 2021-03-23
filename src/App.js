@@ -58,9 +58,6 @@ function App() {
   },[accessToken])
 
 
-  useEffect(()=>{
-    
-  },[useSelector(s=>s.recordReducer.isLogin)])
 
 
   return (

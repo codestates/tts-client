@@ -41,10 +41,9 @@ function NavBar() {
             <Link to='/' className="navBarSignup" onClick={logoutHandler}>로그아웃</Link>
           </li>
         </ul>
-        <a className="navBarHambeger" href="/#" onClick={hambergerHandler}>
-          {" "}
+        <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>
           <i className="fas fa-bars"></i>
-        </a>
+        </Link>
       </nav>
     </div>
   );
