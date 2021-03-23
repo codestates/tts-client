@@ -13,7 +13,7 @@ export default function NowStudyTime() {
       ? records[thisWeek]
           .filter((x) => x !== null)
           .reduce((acc, cur) => {
-            return (acc + cur) / 3600;
+            return acc + cur;
           })
       : false;
 
