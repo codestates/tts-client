@@ -61,7 +61,7 @@ function App() {
   }, []);
 
   return (
-    !isLoading ? <Loading /> :
+    isLoading ? <Loading /> :
     <Router>
     <div>
       <Switch>
