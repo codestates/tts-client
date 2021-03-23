@@ -7,10 +7,10 @@ export default function NowStudyTime() {
   const thisWeek = getNumberOfWeek();
   const state = useSelector((state) => state.recordReducer);
   const { records } = state;
-  console.log(2, records);
+  console.log(2, Object.keys(records).length);
   const allRecordsWeek =
     Object.keys(records).length !== 0
-      ? records[thisWeek]
+      ? records[1]
           .filter((x) => x !== null)
           .reduce((acc, cur) => {
             return acc + cur;
