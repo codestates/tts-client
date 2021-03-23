@@ -1,8 +1,6 @@
-* {margin: 0; padding: 0; box-sizing: border-box;}
-/* 효과1 */
-body{ display: flex; justify-content: center;}
 
 .loading {
+  justify-content: center;
   width: 100%;
   display: flex;
   align-items: center;
