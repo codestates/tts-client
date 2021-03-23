@@ -4,48 +4,51 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {setIsLogin, setUserInfo} from './actions/userAction'
+import { setIsLoading } from './actions/LoadingAction'
 import axios from 'axios'
-import React,{useState, useEffect} from "react";
+import React,{ useEffect } from "react";
 import MainPage from './pages/MainPage'
 import LoginPage from './pages/LoginPage'
 import ModalPage from './pages/ModalPage'
 import MyPage from './pages/MyPage'
 import WelcomePage from './pages/WelcomePage'
 import Loading from './pages/Loading'
-import {useSelector} from 'react-redux'
 
  
 
 function App() {
   const dispatch = useDispatch()
-  const [accessToken,setAccessToken] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const { isLoading } = useSelector(state => state.recordReducer)
 
-
-  const getAccessToken =(authorizationCode)=>{
-    setIsLoading(true);
+  const getAccessToken = (authorizationCode)=>{
+    dispatch(setIsLoading(true));
     axios.post('https://localhost:5000/main/oauth/accesstoken', { authorizationCode: authorizationCode,accept:'application/json',withCredentials:true})
     .then(res=> {
-      setAccessToken(res.data.data.accessToken)})
+      return res.data.data.accessToken
+    }).then(accessToken => {
+      getUserInfo(accessToken);
+    })
   }
 
-  const getUserInfo = ()=>{
+  const getUserInfo = (accessToken)=>{
     axios.get('https://api.github.com/user',{headers:{authorization:`token ${accessToken}`, accept: 'application/json'}})
     .then(res=>{
       const { login, id, name } = res.data;
       const param = {email: `${login}@github.com`, password: id, userName: name?name:login};
       axios.post('https://localhost:5000/main/signup', param, {accept: 'application/json'})
+      .catch(e => console.log('이미 가입된 이메일'))
       .finally(e => {
         axios.post('https://localhost:5000/main/login', param, {accept: 'application/json',withCredentials:true})
         .then(res => {
           dispatch(setIsLogin());
           dispatch(setUserInfo());
-        }).then(d => {setIsLoading(false)})
+        }).then(d => {dispatch(setIsLoading(false));})
       })
     }).catch(e => {
       alert('OAuth 요청에 실패하였습니다.');
+      dispatch(setIsLoading(false));
     })
   }
 
@@ -57,12 +60,8 @@ function App() {
     }
   }, []);
 
-  useEffect(()=>{
-    getUserInfo()
-  },[accessToken])
-
   return (
-    isLoading ? <Loading /> :
+    !isLoading ? <Loading /> :
     <Router>
     <div>
       <Switch>

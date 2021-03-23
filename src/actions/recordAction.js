@@ -4,6 +4,7 @@ export const SET_RECORDS = "SET_RECORDS";
 const axios = require("axios");
 
 export const axiosData = (api, action) => (dispatch) => {
+
   return axios(api, { accept: "application/json", withCredentials: true })
     .then((res) => {
       dispatch(action(res.data.data.Coding));

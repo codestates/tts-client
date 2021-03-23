@@ -13,7 +13,9 @@ function NavBar() {
 
   const logoutHandler=()=>{
     axios.get('https://localhost:5000/user/logout',{accept:'application/json',withCredentials:true}).then(res=>res.data)
-    dispatch(setLogout())
+    .then(e => {
+      dispatch(setLogout())
+    })
   }
 
   // 리액트 훅스 사용 네브바 햄버거 토글 활성화 or 비활성화
