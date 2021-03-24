@@ -1,33 +1,20 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {setIsLogin, setUserInfo} from './actions/userAction'
-import axios from 'axios'
-import React,{useState, useEffect} from "react";
-import MainPage from './pages/MainPage'
-import LoginPage from './pages/LoginPage'
-import ModalPage from './pages/ModalPage'
-import MyPage from './pages/MyPage'
-import WelcomePage from './pages/WelcomePage'
-import Loading from './pages/Loading'
-import { useHistory } from "react-router-dom";
-
-import {useSelector} from 'react-redux'
-
- 
-
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsLogin, setUserInfo } from "./actions/userAction";
+import { setIsLoading } from "./actions/LoadingAction";
+import axios from "axios";
+import React, { useEffect } from "react";
+import MainPage from "./pages/MainPage";
+import LoginPage from "./pages/LoginPage";
+import ModalPage from "./pages/ModalPage";
+import MyPage from "./pages/MyPage";
+import WelcomePage from "./pages/WelcomePage";
+import FollowingPage from "./pages/FollowingPage";
+import Loading from "./pages/Loading";
 function App() {
-  const dispatch = useDispatch()
-  const [accessToken,setAccessToken] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const history = useHistory();
-
-
-
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector((state) => state.recordReducer);
   const getAccessToken = (authorizationCode) => {
     axios
       .post("https://localhost:5000/main/oauth/accesstoken", { authorizationCode: authorizationCode, accept: "application/json", withCredentials: true })
@@ -39,7 +26,6 @@ function App() {
       })
       .catch((e) => dispatch(setIsLoading(false)));
   };
-
   const getUserInfo = (accessToken) => {
     axios
       .get("https://api.github.com/user", { headers: { authorization: `token ${accessToken}`, accept: "application/json" } })
@@ -66,16 +52,14 @@ function App() {
         dispatch(setIsLoading(false));
       });
   };
-
   useEffect(() => {
     const url = new URL(window.location.href);
     const authorizationCode = url.searchParams.get("code");
     if (authorizationCode) {
+      dispatch(setIsLoading(true));
       getAccessToken(authorizationCode);
-      dispatch(setIsLoading(false));
     }
   }, []);
-
   return isLoading ? (
     <Loading />
   ) : (
@@ -93,5 +77,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
