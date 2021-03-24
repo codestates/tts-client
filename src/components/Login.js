@@ -2,7 +2,7 @@ import "../componentsCss/Login.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUserInfo, setIsLogin, setLogout } from "../actions/userAction";
-import { setIsLoading } from '../actions/LoadingAction'
+import { setIsLoading } from "../actions/LoadingAction";
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -13,16 +13,15 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const githubUrl = "https://github.com/login/oauth/authorize?client_id=deacb4e14d3c7d66ffcf";
-  const [showModal,setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
+  const ModalHandler = () => {
+    setShowModal(!showModal);
+  };
   const oAuthHandler = () => {
-    window.location.assign(githubUrl)
-  }
-
-  const ModalHandler=()=>{
-    setShowModal(!showModal)
-  }
+    window.location.assign(githubUrl);
+  };
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -76,7 +75,9 @@ function Login(props) {
             <button type="submit">LOGIN</button>
           </div>
           <div className="LoginBtn">
-            <button type="button" onClick={ModalHandler}>SignUp</button>
+            <button type="button" onClick={ModalHandler}>
+              SignUp
+            </button>
           </div>
           <div className="SignUpBtn">
             <button type="button" onClick={guestHandler}>
