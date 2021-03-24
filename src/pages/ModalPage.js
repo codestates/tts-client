@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import "../componentsCss/ModalPage.css";
 import SignUp from '../components/SignUp'
 

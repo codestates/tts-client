@@ -5,4 +5,3 @@ export function getNumberOfWeek() {
   return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
 }
 
-// console.log(getNumberOfWeek());

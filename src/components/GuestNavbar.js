@@ -11,7 +11,6 @@ function NavBar() {
     setShowModal(!showModal)
   }
 
-  // 리액트 훅스 사용 네브바 햄버거 토글 활성화 or 비활성화
   const hambergerHandler = () => {
     if (active) {
       setActive(false);

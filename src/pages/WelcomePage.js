@@ -1,8 +1,8 @@
-import '../componentsCss/WelcomePage.css'
-import svg from '../tts2.svg'
+import '../componentsCss/WelcomePage.css';
+import svg from '../tts2.svg';
 import NavBar from "../components/NavBar";
 import GuestNavBar from "../components/GuestNavbar";
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 function WelcomePage(props) {
 
@@ -27,7 +27,6 @@ function WelcomePage(props) {
                   Fusce elementum enim nec sapien eleifend, id bibendum dui imperdiet. Curabitur non erat sagittis, sodales erat quis, faucibus augue. Ut sed dapibus eros. Integer varius diam quis sem suscipit, vitae aliquam turpis laoreet. Vivamus sagittis sem neque, vel tempor ipsum ullamcorper quis. In in laoreet massa. Donec interdum sapien accumsan erat tempor, et pharetra nisl tristique. Suspendisse ornare nulla eget ex dignissim tincidunt. Phasellus dui felis, ultricies scelerisque ante in, finibus molestie orci. Nunc eu lobortis arcu. Sed vitae placerat ipsum, varius aliquet turpis. Suspendisse convallis porta mi in auctor. Fusce imperdiet odio in odio tincidunt tempus. Phasellus velit neque, posuere nec mattis at, molestie in quam.
 
                   Vestibulum faucibus ipsum et euismod ornare. Praesent justo nulla, faucibus sit amet congue ac, sagittis ac lorem. Ut vitae odio cursus justo cursus viverra eget vel leo. Sed aliquet non ex et semper. Nulla vel nisi convallis, euismod elit in, ullamcorper arcu. Nunc euismod viverra commodo. In dolor felis, convallis quis lorem eget, sodales maximus ex. Donec sapien erat, efficitur sed massa vitae, dictum facilisis quam. Donec rhoncus ante id tellus ullamcorper, vel ullamcorper turpis dignissim. Etiam dapibus ex sagittis lorem tincidunt, vel volutpat felis feugiat. Nulla facilisi. Vivamus pellentesque nulla ac eros mattis porta. Phasellus velit nulla, aliquet nec imperdiet ut, lacinia id erat.</p>
-                  {/* <Link to='/main'className='WelcomeBtn'> Get started</Link> */}
                   <Link to='/main' className="WelcomeBtn">
                     <button >Get started</button>
                   </Link>

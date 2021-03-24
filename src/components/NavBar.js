@@ -17,8 +17,6 @@ function NavBar() {
       dispatch(setLogout())
     })
   }
-
-  // 리액트 훅스 사용 네브바 햄버거 토글 활성화 or 비활성화
   const hambergerHandler = () => {
     if (active) {
       setActive(false);
@@ -27,7 +25,6 @@ function NavBar() {
     }
   };
   
-  const url = new URL(window.location.href)
 
   return (
     <div>
@@ -40,7 +37,7 @@ function NavBar() {
           <Link to='/welcome'>Home</Link>
           </li>
           <li>
-            <Link to='/main'>초시계</Link>
+            <Link to='/main'>Record</Link>
           </li>
           <li>
             <Link to='/follow'>Follow</Link>
@@ -52,7 +49,7 @@ function NavBar() {
             <Link to='/' className="navBarSignup" onClick={logoutHandler}>Logout</Link>
           </li>
         </ul>
-        <Link className="navBarHambeger" to={url.pathname} onClick={hambergerHandler}>
+        <Link className="navBarHambeger" to='#' onClick={hambergerHandler}>
           <i className="fas fa-bars"></i>
         </Link>
       </nav>
