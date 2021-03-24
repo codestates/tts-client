@@ -35,13 +35,13 @@ const FollowingPage = () => {
   }
 
   const followHandler = (email) => (e) => {
-    if (e.target.className === 'fas fa-user-plus') {
+    if (e.target.className === 'fas fa-user-plus followBtn') {
       axios.post(api + '/add', { email }, {accept: 'application/jason', withCredentials: true})
       .then(res => {
         getFollowingList()
         setUsers([])
       })
-    } else if (e.target.className === 'fas fa-user-minus') {
+    } else if (e.target.className === 'fas fa-user-minus followBtn') {
       axios.post(api + '/remove', {email}, {accept: 'application/jason', withCredentials: true})
       .then(res => {
         getFollowingList()
