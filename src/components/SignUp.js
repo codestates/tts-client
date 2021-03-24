@@ -63,19 +63,19 @@ function SignUp() {
           <h1>Sign Up</h1>
           
           
-          <div className="inputLine">
+          <div className="SignUpinputLine">
             <input type="text" name="id" id="id" autoComplete="off" onChange={emailHandler} required></input>
             <label htmlFor="id">email</label>
           </div>
-          <div className="inputLine">
+          <div className="SignUpinputLine">
             <input type="text" name="naem" id="name" autoComplete="off" onChange={nameHandler} required></input>
             <label htmlFor="name">name</label>
           </div>
-          <div className="inputLine">
+          <div className="SignUpinputLine">
             <input type="password" name="pw" id="pw" minLength='8' maxLength='20' autoComplete="off" onChange={passwordHandler} required></input>
             <label htmlFor="pw">password</label>
           </div>
-          <div className="inputLine">
+          <div className="SignUpinputLine">
             <input type="password" name="cpw" id="cpw" minLength='8' maxLength='20' autoComplete="off" onChange={confirmPasswordHandler} required></input>
             <label htmlFor="cpw">confirm password</label>
           </div>

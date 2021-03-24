@@ -7,6 +7,13 @@
     height: 100vh;
 } */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    font-family: “Jua”, sans-serif;
+  }
+
 
 .LoginDiv{
     position: relative;
@@ -29,7 +36,7 @@
     margin-top: 0;
 }
 .inputLine input{
-    width: 95%;
+    width: 99%;
     padding: 20px 10px 10px;
     background-color: transparent;
     border: none;
@@ -80,12 +87,13 @@
 .OauthDiv{
     color: white;
     margin-top: 40px;
-    justify-content: space-between;
-    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* display: flex; */
 }
 
 .AuthGithub{
-    margin-left: 100px;
+    /* margin-left: 100px; */
     text-align: center;
 }
 
@@ -163,66 +171,58 @@
     height: auto;
 }
 
-/*1025 pc*/
+/*ipad*/
  @media screen and (max-width:1366px){
     
 
     .container{
+        margin-top: 150px;
         width: 100%;
-        margin:0 auto;
     }
 
     .content{
         position: absolute;
-        top: 40%;
-        left:46%
+        top: 27%;
+        left:45%;
     }
     .LoginBody{
         padding:30px 30px;
-        background-color: #0A122A;
+        background-color: #FCF6F5;
     }
 }
 
 
-@media screen and (max-width:1256px){
-    .content{
-        top: 35%;
-        left:45%
+/*414 iphone6+ */
+ @media screen and (max-width:552px){
+
+    .cover{
+        display: none;
     }
-}
-
-@media screen and (max-width:1146px){
+    
     .content{
-        top: 23%;
-        left:45%
-    }
-}
-
-
-/*768px 태블릿*/
-@media screen and (max-width:1025px){
-    .content{
-        top: 21%;
-        left:45%
+        top: 10%;
+        left:30%;
     }
 }
 
 
-
-/* 481px 모바일 */
-@media screen and (max-width:641px){
-    .container{
-        margin: 150px auto;
-    }
-
+/*375 iphoneX */
+ @media screen and (max-width:500px){
+    
     .content{
-        top: 17.5%;
-        left:45%
+        top: 10%;
+        left:41%
     }
 }
-/* @media screen and (max-width:1100px){
+
+/* 320px iphone5 */
+@media screen and (max-width:427px){
+    
     .content{
-        top: 0;
-        left:45%
+        margin-left: 35px;
     }
-} */
+    
+}
+
+
+

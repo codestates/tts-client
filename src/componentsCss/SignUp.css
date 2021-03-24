@@ -19,15 +19,15 @@
     margin-bottom: 60px;
 }
 
-.inputLine{
+.SignUpinputLine{
     width: 400px;
     position: relative;
     margin-top: 20px;
 }
-.inputLine:first-child{
+.SignUpinputLine:first-child{
     margin-top: 0;
 }
-.inputLine input{
+.SignUpinputLine input{
     width: 95%;
     padding: 20px 10px 10px;
     background-color: transparent;
@@ -38,7 +38,7 @@
     outline: none;
 }
 
-.inputLine label{
+.SignUpinputLine label{
     position: absolute;
     left: 10px;
     top: 15px;
@@ -47,8 +47,8 @@
     transition: top .5s ease;
 
 }
-.inputLine input:focus +label,
-.inputLine input:valid +label{
+.SignUpinputLine input:focus +label,
+.SignUpinputLine input:valid +label{
     top: -2px;
     font-size: 13px;
     color: #166cea;
@@ -73,4 +73,36 @@
 .SignUpBtn button{
     background-color: gray;
 
+}
+
+
+
+
+
+/*375 iphoneX */
+ @media screen and (max-width:500px){
+   
+    .SignUpinputLine input{
+        width: 80%;
+        margin-left: 20px;
+    }
+
+    .SignUpinputLine label{
+        left:30px;
+    }
+
+    
+}
+
+/* 320px iphone5 */
+@media screen and (max-width:427px){
+    
+    .SignUpinputLine input{
+        width: 70%;
+        margin-left: 50px;
+    }
+
+    .SignUpinputLine label{
+        left:55px
+    }
 }

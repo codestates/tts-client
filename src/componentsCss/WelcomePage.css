@@ -1,0 +1,101 @@
+.WelcomContainer{
+    width: 1200px;
+    border-radius: 4px;
+    height: 100%;
+    background-color: #FCF6F5;
+    color: black;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.WelcomeCover{
+    position: relative;
+    flex-grow: 4;
+    flex-shrink: 1;
+    height: 100%;
+}
+
+.WelcomContent{
+    position: absolute;;
+    color: black;
+    background-color: #FCF6F5;
+    top: 30%;
+    left:26%;
+    width: 800px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.WelcomContent p{
+    margin: 0 50px;
+}
+
+.WelcomCoverPhoto{
+    height: auto;
+}
+
+
+.WelcomeBtn{
+    margin-top: 40px;
+}
+
+
+.WelcomeBtn button {
+    padding:20px 30px;
+    width: 100%;
+    height: 100%;
+    background-color: #166cea;
+    color: white;
+    font-size:40px;
+    border: none;
+    border-radius: 25px;
+}
+
+
+
+/*ipad*/
+@media screen and (max-width:1366px){
+
+    .WelcomContainer{
+        display: inline;
+        margin-top: 150px;
+        width: 100%;
+    }
+
+    .WelcomeCover{
+        margin-top: 70px;
+    }
+
+    .WelcomContent{
+        display: none;
+    }
+    
+}
+
+
+/*414 iphone6+ */
+ @media screen and (max-width:552px){
+
+    
+}
+
+
+/*375 iphoneX */
+ @media screen and (max-width:500px){
+   
+   
+}
+
+/* 320px iphone5 */
+@media screen and (max-width:427px){
+    
+    .WelcomeCover{
+        margin-top: 60px;
+    }
+}

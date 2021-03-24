@@ -36,7 +36,10 @@ function NavBar() {
             <Link to='/' >Login</Link>
           </li>
           <li>
-            <Link className='navBarSignup' onClick={ModalHandler}>Sign Up</Link>
+            <Link className='navBarSignup' onClick={()=>{
+              hambergerHandler()
+              ModalHandler()
+            }} >Sign Up</Link>
           </li>
         </ul>
         <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>

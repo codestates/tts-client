@@ -87,12 +87,12 @@ function Login({ModalHandler}) {
                 <i className="fab fa-github"></i>
               </a>
             </div>
-            <div className="or">or</div>
-            <div className="AuthGoogle">
+            {/* <div className="or">or</div> */}
+            {/* <div className="AuthGoogle">
               <a href="/#">
                 <i className="fab fa-google"></i>
               </a>
-            </div>
+            </div> */}
           </div>
         </form>
       </section>

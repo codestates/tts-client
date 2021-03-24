@@ -36,3 +36,21 @@
     /* z-index:10; */
 
 }
+
+/*375 iphoneX */
+@media screen and (max-width:500px){
+    
+    .CloseBtn{
+        font-size: 20px;
+    }
+    
+}
+
+
+/* 320px iphone5 */
+@media screen and (max-width:427px){
+    
+    .CloseBtn{
+        font-size: 20px;
+    }
+}
