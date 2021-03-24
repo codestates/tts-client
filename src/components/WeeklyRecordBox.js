@@ -3,7 +3,7 @@ import WeeklyRecord from "./WeeklyRecord";
 
 export default function WeeklyRecordBox() {
   return (
-    <div>
+    <div className="weeklyRecordBox">
       <WeeklyRecord />
     </div>
   );

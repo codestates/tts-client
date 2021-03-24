@@ -1,0 +1,168 @@
+.myPage {
+  margin: 0;
+  text-decoration: none;
+  color: antiquewhite;
+  display: flex;
+  width: 100%;
+  height: 91vh;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.userInfo {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  border: 2px solid hotpink;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.userInfo-name-email {
+  border: 2px solid pink;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.userInfo-password {
+  height: 140px;
+  border: 2px solid pink;
+  padding: 10px;
+}
+
+.userInfo-grade {
+  border: 2px solid pink;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.userInfo-grade-modal {
+  border: 2px solid red;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.userInfo-grade-modal-chkColor {
+  color: gray;
+}
+
+.weeklyRecordBox {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  border: 2px solid hotpink;
+  flex-direction: column;
+  padding: 30px 30px;
+}
+
+.weeklyRecord {
+  display: flex;
+  border: 2px solid pink;
+  padding: 10px;
+}
+
+@media screen and (min-height: 1024px) {
+  .myPage {
+    height: 95vh;
+    font-size: 2rem;
+  }
+
+  .userInfo-name-email {
+    height: 150px;
+    padding: 40px;
+  }
+
+  .userInfo-password {
+    height: 220px;
+    padding: 40px;
+  }
+
+  .userInfo-grade-modal {
+    margin-top: 20px;
+  }
+
+  .userInfo-grade {
+    padding: 40px;
+  }
+
+  .weeklyRecord {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-height: 1366px) {
+  .myPage {
+    height: 95vh;
+    font-size: 2.5rem;
+  }
+
+  .userInfo-name-email {
+    height: 190px;
+    padding: 60px;
+  }
+
+  .userInfo-password {
+    height: 300px;
+    padding: 60px;
+  }
+
+  .userInfo-grade {
+    padding: 60px;
+  }
+
+  .userInfo-grade-modal {
+    margin-top: 40px;
+  }
+
+  .weeklyRecord {
+    padding: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .myPage {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .userInfo {
+    height: 80vh;
+    justify-content: start;
+    padding: 20px 20px;
+  }
+
+  .weeklyRecordBox {
+    height: 80vh;
+    width: 430px;
+    justify-content: start;
+    padding: 20px 30px;
+  }
+
+  .userInfo-name-email {
+    height: 90px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .userInfo-password {
+    height: 180px;
+    padding: 20px;
+  }
+  .userInfo-grade {
+    border: 2px solid pink;
+    padding: 10px;
+    cursor: pointer;
+    height: 250px;
+  }
+}
