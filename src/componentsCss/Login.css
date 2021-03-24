@@ -97,12 +97,23 @@
 
 .fa-github, .fa-google{
     font-size: 40px;
-    color: white;
+    color: black;
 
+}
+
+.fa-github:hover, .fa-google:hover{
+    color: orange;
 }
 
 .or{
     margin-top: 10px;
+}
+
+.LoginBtn button:hover{
+    background-color: orange;
+}
+.SignUpBtn button:hover{
+    background-color: orange;
 }
 
 /* .AuthGithub a i{

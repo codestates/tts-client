@@ -8,20 +8,20 @@ import axios from "axios";
 import ModalPage from '../pages/ModalPage'
 
 
-function Login(props) {
+function Login({ModalHandler}) {
   const history = useHistory();
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const githubUrl = "https://github.com/login/oauth/authorize?client_id=deacb4e14d3c7d66ffcf";
-  const [showModal,setShowModal] = useState(false);
+  // const [showModal,setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
 
 
-  const ModalHandler=()=>{
-    setShowModal(!showModal)
-  }
+  // const ModalHandler=()=>{
+  //   setShowModal(!showModal)
+  // }
 
   const emailHandler = (e) => {
     setEmail(e.target.value);
@@ -97,9 +97,8 @@ function Login(props) {
         </form>
       </section>
     </div>
-   
     <>
-      <ModalPage showModal={showModal} setShowModal={setShowModal}></ModalPage>
+      {/* <ModalPage showModal={showModal} setShowModal={setShowModal}></ModalPage> */}
     </>
     </>
   );

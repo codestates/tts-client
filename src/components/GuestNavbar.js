@@ -30,7 +30,7 @@ function NavBar() {
           <Link to='/welcome'>Home</Link>
           </li>
           <li>
-          <Link to='/main'>초시계</Link>
+          <Link to='/main'>Record</Link>
           </li>
           <li>
             <Link to='/' >Login</Link>

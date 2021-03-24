@@ -60,7 +60,7 @@ function SignUp() {
       <section className="SignUpSec">
         <form className="SignUpDiv" onSubmit={submitHandler}>
           
-          <h1>회원가입</h1>
+          <h1>Sign Up</h1>
           
           
           <div className="inputLine">
@@ -80,7 +80,7 @@ function SignUp() {
             <label htmlFor="cpw">confirm password</label>
           </div>
           <div className="LoginBtn">
-            <button type="submit">SIGNUP</button>
+            <button type="submit">Sign Up ?</button>
           </div>
           
           
