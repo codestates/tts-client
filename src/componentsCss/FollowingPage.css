@@ -2,8 +2,7 @@
   display: flex;
   width: 100%;
   height: 100%;
-  padding-right: 15%;
-  color: antiquewhite;
+  padding-right: 10%;
 }
 
 .follow {
@@ -14,23 +13,24 @@
 }
 
 .list {
-  width: 70%;
+  width: 60%;
 }
 
 .search {
-  width: 30%;
+  width: 40%;
 }
 
 .sign {
   margin: 50px 0;
   font-size: 50px;
+  color: white;
 }
 
 .oneFollowong > span {
   margin: 5px;
 }
 
-button {
+.followBtn {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -39,12 +39,13 @@ button {
   color: white;
 }
 
-button:hover {
+.followBtn:hover {
   color: gray;
 }
 
 .searchBox {
-  border: 1px solid red;
+  border: 2px solid gray;
+  border-radius: 40px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -55,12 +56,71 @@ button:hover {
   overflow: auto;
 }
 
-input {
+.followInput {
   width: 100%;
   height: 30px;
   outline: none;
   padding: 0 10px;
+  border-radius: 5px;
 }
 
-/* .oneFollowing {
-} */
+.oneFollowong {
+  padding-top: 5px;
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: white;
+  height: 40px;
+  box-shadow: 5px 5px 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  #followContainer {
+    height: 1366px;
+    padding-right: 5%;
+  }
+
+  .list {
+    width: 50%;
+  }
+  
+  .search {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  #followContainer {
+    flex-direction: column;
+    align-items: center;
+    height: 585px;
+    padding: 0;
+  }
+
+  .sign {
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  .oneFollowong > span {
+    margin: 2px;
+    font-size: 10px;
+  }
+  
+  .followBtn {
+    font-size: 10px;
+  }
+
+  .searchBox {
+    height: auto;
+    border: none;
+    border-radius: 0;
+    width: auto;
+  }
+
+  .oneFollowong {
+    border-radius: 0;
+    width: 250px;
+    padding-left: 40px;
+  }
+}
+
