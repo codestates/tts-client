@@ -27,58 +27,70 @@ function App() {
   const history = useHistory();
 
 
-  const getAccessToken =(authorizationCode)=>{
-    setIsLoading(true);
-    axios.post('https://localhost:5000/main/oauth/accesstoken', { authorizationCode: authorizationCode,accept:'application/json',withCredentials:true})
-    .then(res=> {
-      setAccessToken(res.data.data.accessToken)})
-  }
 
-  const getUserInfo = ()=>{
-    axios.get('https://api.github.com/user',{headers:{authorization:`token ${accessToken}`, accept: 'application/json'}})
-    .then(res=>{
-      const { login, id, name } = res.data;
-      const param = {email: `${login}@github.com`, password: id, userName: name?name:login};
-      axios.post('https://localhost:5000/main/signup', param, {accept: 'application/json'})
-      .finally(e => {
-        axios.post('https://localhost:5000/main/login', param, {accept: 'application/json',withCredentials:true})
-        .then(res => {
-          dispatch(setIsLogin());
-          dispatch(setUserInfo());
-        }).then(d => {setIsLoading(false)})
+  const getAccessToken = (authorizationCode) => {
+    axios
+      .post("https://localhost:5000/main/oauth/accesstoken", { authorizationCode: authorizationCode, accept: "application/json", withCredentials: true })
+      .then((res) => {
+        return res.data.data.accessToken;
       })
-    })
-    // .catch(e => {
-    //   alert('OAuth 요청에 실패하였습니다.');
-    //   history.push("/login");
-    // })
-  }
+      .then((accessToken) => {
+        getUserInfo(accessToken);
+      })
+      .catch((e) => dispatch(setIsLoading(false)));
+  };
+
+  const getUserInfo = (accessToken) => {
+    axios
+      .get("https://api.github.com/user", { headers: { authorization: `token ${accessToken}`, accept: "application/json" } })
+      .then((res) => {
+        const { login, id, name } = res.data;
+        const param = { email: `${login}@github.com`, password: id, userName: name ? name : login };
+        axios
+          .post("https://localhost:5000/main/signup", param, { accept: "application/json" })
+          .catch((e) => console.log("이미 가입된 이메일"))
+          .finally((e) => {
+            axios
+              .post("https://localhost:5000/main/login", param, { accept: "application/json", withCredentials: true })
+              .then((res) => {
+                dispatch(setIsLogin());
+                dispatch(setUserInfo());
+              })
+              .then((d) => {
+                dispatch(setIsLoading(false));
+              });
+          });
+      })
+      .catch((e) => {
+        alert("OAuth 요청에 실패하였습니다.");
+        dispatch(setIsLoading(false));
+      });
+  };
 
   useEffect(() => {
-    const url = new URL(window.location.href)
-    const authorizationCode = url.searchParams.get('code')
+    const url = new URL(window.location.href);
+    const authorizationCode = url.searchParams.get("code");
     if (authorizationCode) {
-      getAccessToken(authorizationCode)
+      getAccessToken(authorizationCode);
+      dispatch(setIsLoading(false));
     }
   }, []);
 
-  useEffect(()=>{
-    getUserInfo()
-  },[accessToken])
-
-  return (
-    isLoading ? <Loading /> :
+  return isLoading ? (
+    <Loading />
+  ) : (
     <Router>
-    <div>
-      <Switch>
-      <Route  exact path="/" component={LoginPage}/>
-      <Route  path="/main" component={MainPage}/>
-      <Route  path="/welcome" component={WelcomePage}/>
-      <Route  path="/signup" component={ModalPage}/>
-      <Route  path="/mypage" component={MyPage}/>
-      </Switch>
-    </div>
-  </Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <Route path="/follow" component={FollowingPage} />
+          <Route path="/main" component={MainPage} />
+          <Route path="/welcome" component={WelcomePage} />
+          <Route path="/signup" component={ModalPage} />
+          <Route path="/mypage" component={MyPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

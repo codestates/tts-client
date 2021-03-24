@@ -7,7 +7,6 @@ export default function NowStudyTime() {
   const thisWeek = getNumberOfWeek();
   const state = useSelector((state) => state.recordReducer);
   const { records } = state;
-  console.log(2, Object.keys(records).length);
   const allRecordsWeek =
     thisWeek in records
       ? records[thisWeek]

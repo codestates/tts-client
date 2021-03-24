@@ -1,20 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import NavBar from "../components/NavBar";
-import {useSelector} from 'react-redux'
 import GuestNavBar from "../components/GuestNavbar";
-
-
-
+import UserInfo from "../components/UserInfo";
+import WeeklyRecordBox from "../components/WeeklyRecordBox";
+import "../componentsCss/MyPage.css";
 function MyPage() {
-  const x = useSelector(s=>s.recordReducer.isLogin)
+  const x = useSelector((s) => s.recordReducer.isLogin);
 
   return (
     <div>
-      {x ? (
-            <NavBar />
-         ) : (
-            <GuestNavBar/>
-      )}
+      <div>{x ? <NavBar /> : <GuestNavBar />}</div>
+      <div className="myPage">
+        <UserInfo />
+        <WeeklyRecordBox />
+      </div>
     </div>
   );
 }
