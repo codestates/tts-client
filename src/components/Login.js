@@ -6,13 +6,16 @@ import { setIsLoading } from "../actions/LoadingAction";
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import ModalPage from '../pages/ModalPage'
 
-function Login(props) {
+
+function Login({ModalHandler}) {
   const history = useHistory();
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const githubUrl = "https://github.com/login/oauth/authorize?client_id=deacb4e14d3c7d66ffcf";
+
   const [showModal, setShowModal] = useState(false);
   // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
@@ -48,10 +51,11 @@ function Login(props) {
           history.push("/main");
           dispatch(setIsLoading(false));
         } else {
-          history.push("/login");
+          // history.push("/login");
           alert("no member");
         }
-      });
+      })
+      .catch(e=>alert('no member'))
   };
   const guestHandler = (e) => {
     dispatch(setLogout());
@@ -59,6 +63,7 @@ function Login(props) {
   };
 
   return (
+    <>
     <div className="LoginBody">
       <section className="LoginSec">
         <form className="LoginDiv" onSubmit={submitHandler}>
@@ -90,16 +95,20 @@ function Login(props) {
                 <i className="fab fa-github"></i>
               </div>
             </div>
-            <div className="or">or</div>
-            <div className="AuthGoogle">
+            {/* <div className="or">or</div> */}
+            {/* <div className="AuthGoogle">
               <a href="/#">
                 <i className="fab fa-google"></i>
               </a>
-            </div>
+            </div> */}
           </div>
         </form>
       </section>
     </div>
+    <>
+      {/* <ModalPage showModal={showModal} setShowModal={setShowModal}></ModalPage> */}
+    </>
+    </>
   );
 }
 

@@ -1,0 +1,108 @@
+.SignUpBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    flex-grow: 2;
+}
+
+
+.SignUpDiv{
+    position: relative;
+    z-index: 2;
+}
+
+.SignUpDiv h1{
+    font-size: 32px;
+    color: black;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.SignUpinputLine{
+    width: 400px;
+    position: relative;
+    margin-top: 20px;
+}
+.SignUpinputLine:first-child{
+    margin-top: 0;
+}
+.SignUpinputLine input{
+    width: 95%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
+    color: white;
+    outline: none;
+}
+
+.SignUpinputLine label{
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 18px;
+    color: gray;
+    transition: top .5s ease;
+
+}
+.SignUpinputLine input:focus +label,
+.SignUpinputLine input:valid +label{
+    top: -2px;
+    font-size: 13px;
+    color: #166cea;
+
+}
+
+.LoginBtn, .SignUpBtn{
+    margin-top: 30px;
+}
+
+
+.LoginBtn button, .SignUpBtn button{
+    width: 100%;
+    height: 40px;
+    background-color: #166cea;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+}
+
+.SignUpBtn button{
+    background-color: gray;
+
+}
+
+
+
+
+
+/*375 iphoneX */
+ @media screen and (max-width:500px){
+   
+    .SignUpinputLine input{
+        width: 80%;
+        margin-left: 20px;
+    }
+
+    .SignUpinputLine label{
+        left:30px;
+    }
+
+    
+}
+
+/* 320px iphone5 */
+@media screen and (max-width:427px){
+    
+    .SignUpinputLine input{
+        width: 70%;
+        margin-left: 50px;
+    }
+
+    .SignUpinputLine label{
+        left:55px
+    }
+}

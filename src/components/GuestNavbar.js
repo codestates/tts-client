@@ -23,17 +23,23 @@ function NavBar() {
     <div>
       <nav className="navBar">
         <div className="navBarLogo">
-          <a href="/welcome">tts</a>
+        <Link to="/welcome">tts</Link>
         </div>
         <ul className={`navBarMenu ${active ? "active" : ""}`}>
           <li>
-          <Link to='/main'>초시계</Link>
+          <Link to='/welcome'>Home</Link>
           </li>
           <li>
-            <Link to='/' >로그인</Link>
+          <Link to='/main'>Record</Link>
           </li>
           <li>
-            <Link className='navBarSignup' onClick={ModalHandler}>회원가입</Link>
+            <Link to='/' >Login</Link>
+          </li>
+          <li>
+            <Link className='navBarSignup' onClick={()=>{
+              hambergerHandler()
+              ModalHandler()
+            }} >Sign Up</Link>
           </li>
         </ul>
         <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>
