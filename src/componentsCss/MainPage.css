@@ -25,11 +25,11 @@
   flex-wrap: nowrap;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .exceptNavBar {
     flex-direction: row;
   }
-}
+} */
 
 @media screen and (min-width: 1025px) {
   .exceptNavBar {
