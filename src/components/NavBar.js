@@ -26,6 +26,9 @@ function NavBar() {
       setActive(true);
     }
   };
+  
+  const url = new URL(window.location.href)
+
   return (
     <div>
       <nav className="navBar">
@@ -37,13 +40,16 @@ function NavBar() {
             <Link to='/main'>초시계</Link>
           </li>
           <li>
+            <Link to='/follow'>Follow</Link>
+          </li>
+          <li>
             <Link to='/mypage'>마이페이지</Link>
           </li>
           <li>
             <Link to='/' className="navBarSignup" onClick={logoutHandler}>로그아웃</Link>
           </li>
         </ul>
-        <Link className="navBarHambeger" href="/#" onClick={hambergerHandler}>
+        <Link className="navBarHambeger" to={url.pathname} onClick={hambergerHandler}>
           <i className="fas fa-bars"></i>
         </Link>
       </nav>
