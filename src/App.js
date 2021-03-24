@@ -14,6 +14,7 @@ import LoginPage from './pages/LoginPage'
 import ModalPage from './pages/ModalPage'
 import MyPage from './pages/MyPage'
 import WelcomePage from './pages/WelcomePage'
+import FollowingPage from './pages/FollowingPage'
 import Loading from './pages/Loading'
 
  
@@ -23,13 +24,12 @@ function App() {
   const { isLoading } = useSelector(state => state.recordReducer)
 
   const getAccessToken = (authorizationCode)=>{
-    dispatch(setIsLoading(true));
     axios.post('https://localhost:5000/main/oauth/accesstoken', { authorizationCode: authorizationCode,accept:'application/json',withCredentials:true})
     .then(res=> {
       return res.data.data.accessToken
     }).then(accessToken => {
       getUserInfo(accessToken);
-    })
+    }).catch(e => dispatch(setIsLoading(false)))
   }
 
   const getUserInfo = (accessToken)=>{
@@ -56,6 +56,7 @@ function App() {
     const url = new URL(window.location.href)
     const authorizationCode = url.searchParams.get('code')
     if (authorizationCode) {
+      dispatch(setIsLoading(true));
       getAccessToken(authorizationCode)
     }
   }, []);
@@ -66,6 +67,7 @@ function App() {
     <div>
       <Switch>
       <Route  exact path="/" component={LoginPage}/>
+      <Route  path="/follow" component={FollowingPage}/>
       <Route  path="/main" component={MainPage}/>
       <Route  path="/welcome" component={WelcomePage}/>
       <Route  path="/signup" component={ModalPage}/>
