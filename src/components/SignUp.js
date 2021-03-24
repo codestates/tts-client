@@ -1,15 +1,11 @@
 import "../componentsCss/SignUp.css";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setUserInfo, setIsLogin, setLogout } from "../actions/userAction";
-import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 function SignUp() {
 
     const history = useHistory();
-  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [userName, setName] = useState("");
   const [password, setPassword] = useState("");

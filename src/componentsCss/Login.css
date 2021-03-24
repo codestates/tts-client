@@ -72,13 +72,10 @@
     color: white;
     margin-top: 40px;
     align-items: center;
-    /* justify-content: space-between; */
-    /* display: flex; */
 }
 
 .AuthGithub{
     cursor: pointer;
-    margin-left: 100px;
     text-align: center;
 }
 
@@ -109,14 +106,6 @@
     background-color: orange;
 }
 
-/* .AuthGithub a i{
-    width: 20px;
-    height: 20px;
-    font-size: 15px;
-    color: #999;
-    text-decoration: none;
-} */
-
 
 
 
@@ -129,7 +118,6 @@
     height: 100%;
     background-color: #FCF6F5;
     color: black;
-    /* width: 100%; */
     margin: 100px auto;
     display: flex;
 
@@ -142,8 +130,6 @@
 }
 
 .content{
-    /* position:absolute; */
-    /* height: 100vh; */
     flex-shrink: 1;
     display: flex;
     justify-content: center;
