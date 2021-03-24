@@ -28,7 +28,7 @@ function NavBar() {
     <div>
       <nav className="navBar">
         <div className="navBarLogo">
-          <a href="/welcome">tts</a>
+          <Link to="/welcome">tts</Link>
         </div>
         <ul className={`navBarMenu ${active ? "active" : ""}`}>
           <li>
