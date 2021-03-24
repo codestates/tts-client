@@ -4,7 +4,12 @@ import { useSelector } from "react-redux";
 
 export default function Grade() {
   const state = useSelector((state) => state.recordReducer);
-  const grade = state.user.tags ? state.user.tags : "칭호가 없습니다";
+  const grade = state.user.tags ? state.user.tags : "";
+  const userName = state.user.userName;
 
-  return <div className="grade"> {grade} </div>;
+  return (
+    <div className="grade">
+      {userName} Rank {grade[grade.length - 1]}{" "}
+    </div>
+  );
 }
