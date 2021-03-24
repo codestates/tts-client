@@ -16,6 +16,7 @@ function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.recordReducer);
 
+  dispatch(setIsLoading(false));
   const getAccessToken = (authorizationCode) => {
     dispatch(setIsLoading(true));
     axios
