@@ -30,7 +30,6 @@ const FollowingPage = () => {
   const getFollowingList = () => {
     axios.get(api + '/get', {accept: 'application/jason', withCredentials: true})
     .then(res => { 
-      console.log(res.data.data)
       setLists(mapOneFollowing(res.data.data, 'fas fa-user-minus'));
     })
   }
@@ -39,19 +38,29 @@ const FollowingPage = () => {
     if (e.target.className === 'fas fa-user-plus') {
       axios.post(api + '/add', { email }, {accept: 'application/jason', withCredentials: true})
       .then(res => {
-        console.log(res.data.message);
         getFollowingList()
+        setUsers([])
+      })
+    } else if (e.target.className === 'fas fa-user-minus') {
+      axios.post(api + '/remove', {email}, {accept: 'application/jason', withCredentials: true})
+      .then(res => {
+        getFollowingList()
+        setUsers([])
       })
     }
   };
 
   const searchHandler = (e) => {
-    const params = { email: e.target.value };
-    axios.post(api + '/search', params, {accept: 'application/jason', withCredentials: true})
-    .then(res => {
-      setUsers(mapOneFollowing(res.data.data.users, "fas fa-user-plus"))
-    })
-    .catch(e => setUsers([]));
+    const params = { keyword: e.target.value };
+    if (e.target.value.length === 0) {
+      setUsers([])
+    } else {
+      axios.post(api + '/search', params, {accept: 'application/jason', withCredentials: true})
+      .then(res => {
+        setUsers(mapOneFollowing(res.data.data.users, "fas fa-user-plus"))
+      })
+      .catch(e => setUsers([]));
+    }
   };
 
   useEffect(() => {
@@ -68,7 +77,7 @@ const FollowingPage = () => {
         </div>
         <div className="follow search">
           <div className="sign">Search User</div>
-          <input placeholder="email or username" onChange={searchHandler}></input>
+          <input className="followInput" placeholder="email or username" onChange={searchHandler}></input>
           <div className="searchBox">
             {users}
           </div>
