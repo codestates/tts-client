@@ -5,16 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:white;
-  /* background-image: url('./tts2.svg'); */
-  /* background-size: cover; */
-  /* height: 1738px; */
+  background-color:#0a122a;
   font-weight: bold;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input, button{
+  outline: none;
 }
 
 

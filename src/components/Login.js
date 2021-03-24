@@ -6,7 +6,6 @@ import { setIsLoading } from "../actions/LoadingAction";
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import ModalPage from '../pages/ModalPage'
 
 
 function Login({ModalHandler}) {
@@ -16,12 +15,8 @@ function Login({ModalHandler}) {
   const [password, setPassword] = useState("");
   const githubUrl = "https://github.com/login/oauth/authorize?client_id=deacb4e14d3c7d66ffcf";
 
-  const [showModal, setShowModal] = useState(false);
-  // const googleUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
-  const ModalHandler = () => {
-    setShowModal(!showModal);
-  };
+  
   const oAuthHandler = () => {
     window.location.assign(githubUrl);
   };
@@ -51,7 +46,6 @@ function Login({ModalHandler}) {
           history.push("/main");
           dispatch(setIsLoading(false));
         } else {
-          // history.push("/login");
           alert("no member");
         }
       })
@@ -95,19 +89,10 @@ function Login({ModalHandler}) {
                 <i className="fab fa-github"></i>
               </div>
             </div>
-            {/* <div className="or">or</div> */}
-            {/* <div className="AuthGoogle">
-              <a href="/#">
-                <i className="fab fa-google"></i>
-              </a>
-            </div> */}
           </div>
         </form>
       </section>
     </div>
-    <>
-      {/* <ModalPage showModal={showModal} setShowModal={setShowModal}></ModalPage> */}
-    </>
     </>
   );
 }

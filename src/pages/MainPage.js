@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-
+import { useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Clock from "../components/Clock";
 import OneRecordBox from "../components/OneRecordBox";

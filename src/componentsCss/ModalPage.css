@@ -1,5 +1,4 @@
 .ModalBackground{
-    /* position: absolute; */
     z-index: 100;
     width: 100%;
     height: 100%;
@@ -33,7 +32,6 @@
     top:20px;
     right:20px;
     padding: 0;
-    /* z-index:10; */
 
 }
 
