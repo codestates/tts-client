@@ -11,12 +11,14 @@ export default function WeeklyRecord() {
   });
 
   return (
-    <div>
+    <div className="weeklyRecord">
       <div style={{ color: "white" }}>
         {recordsKeys.map((x, idx) => (
-          <div>{parseInt(weekDataObject[x] / 3600) < 1 ? `${x} 주차 ${parseInt(weekDataObject[x] % 60)} 분` : `${x} 주차 ${parseInt(weekDataObject[x] / 3600)} 시간 ${parseInt((weekDataObject[x] % 3600) / 60)} 분`}</div>
+          <div>{`${x} Week : ${parseInt(weekDataObject[x] / 3600)} h ${"  "}${parseInt((weekDataObject[x] % 3600) / 60)} m`}</div>
         ))}
       </div>
     </div>
   );
 }
+
+//  <div>{parseInt(weekDataObject[x] / 3600) < 1 ? `${x} Week : ${parseInt(weekDataObject[x] % 60)} m` : `${x} Week : ${parseInt(weekDataObject[x] / 3600)} h ${parseInt((weekDataObject[x] % 3600) / 60)} m`}</div>

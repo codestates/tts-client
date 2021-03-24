@@ -36,6 +36,7 @@
   cursor: pointer;
   outline: none;
   font-size: 20px;
+  color: white;
 }
 
 .followBtn:hover {
@@ -122,3 +123,4 @@
     padding-left: 40px;
   }
 }
+

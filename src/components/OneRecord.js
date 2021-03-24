@@ -11,7 +11,7 @@ function OneRecord({ dayTime, dayCount, idx }) {
     <div className="oneRecord">
       {dayTime == null ? (
         <div className="dayTime">
-          <div>{dayCount[idx]} : 판교 안갈꺼야?</div>
+          <div>{dayCount[idx]} : -- : -- : -- </div>
         </div>
       ) : (
         <div className="dayTime">

@@ -1,4 +1,4 @@
-import '../componentsCss/Loading.css'
+import "../componentsCss/Loading.css";
 
 const Loading = () => {
   return (
@@ -7,7 +7,7 @@ const Loading = () => {
       <span>T</span>
       <span>S</span>
     </div>
-  )
-}
+  );
+};
 
 export default Loading;
