@@ -97,7 +97,7 @@
 
 .fa-github:hover,
 .fa-google:hover {
-  color: #0a122a;
+  color: orange;
 }
 
 .or {
@@ -105,10 +105,10 @@
 }
 
 .LoginBtn button:hover {
-  background-color: #0a122a;
+  background-color: orange;
 }
 .SignUpBtn button:hover {
-  background-color: #0a122a;
+  background-color: orange;
 }
 
 /* LoginPage.js css 처리 */
