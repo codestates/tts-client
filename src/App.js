@@ -1,3 +1,4 @@
+
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -61,25 +62,25 @@ function App() {
     const url = new URL(window.location.href);
     const authorizationCode = url.searchParams.get("code");
     if (authorizationCode) {
-      dispatch(setIsLoading(false));
-      getAccessToken(authorizationCode)
+      dispatch(setIsLoading(true));
+      getAccessToken(authorizationCode);
     }
   }, []);
   return isLoading ? (
     <Loading />
   ) : (
     <Router>
-    <div>
-      <Switch>
-      <Route  exact path="/" component={LoginPage}/>
-      <Route  path="/follow" component={FollowingPage}/>
-      <Route  path="/main" component={MainPage}/>
-      <Route  path="/welcome" component={WelcomePage}/>
-      <Route  path="/signup" component={ModalPage}/>
-      <Route  path="/mypage" component={MyPage}/>
-      </Switch>
-    </div>
-  </Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={LoginPage} />
+          <Route path="/follow" component={FollowingPage} />
+          <Route path="/main" component={MainPage} />
+          <Route path="/welcome" component={WelcomePage} />
+          <Route path="/signup" component={ModalPage} />
+          <Route path="/mypage" component={MyPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 export default App;

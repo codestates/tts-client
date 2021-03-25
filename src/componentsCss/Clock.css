@@ -12,7 +12,10 @@
   border-radius: 20px;
   padding: 30px;
   margin: 15px 20px 0;
+}
 
+.clockGo:hover {
+  background-color: #111b3a;
 }
 
 .clockStop {
@@ -29,7 +32,10 @@
   border-radius: 20px;
   padding: 30px;
   margin: 15px 20px 0;
+}
 
+.clockStop:hover {
+  background-color: #111b3a;
 }
 
 .hhMm {

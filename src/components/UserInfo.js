@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "../componentsCss/UserInfo.css";
+
 const dotenv = require("dotenv");
 dotenv.config();
 const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
+import GradeModal from "./GradeModal";
 
 function UserInfo() {
   const userInfo = useSelector((state) => state.recordReducer).user;
   const { email, userName, tags } = userInfo;
+  const [gradeModal, setGradeModal] = useState(false);
   const [password, setPassword] = useState("");
   const [chkPassword, setChkPassword] = useState("");
   const [grade, setGrade] = useState(false);
@@ -41,7 +44,6 @@ function UserInfo() {
           }
         })
         .catch((e) => {
-          // ! 에러 메세지 확인
           if (e.message === "Request failed with status code 403") {
             alert("기존 비밀번호와 달라야 합니다");
           } else {
@@ -56,8 +58,6 @@ function UserInfo() {
     setGrade(grade === false ? true : false);
   };
 
-  const allGrade = ["비기너 : 0시간", "아이언 : 5시간", "브론즈 : 10시간", "실버 : 25시간", "골드 : 50시간", "플레티넘 : 100시간", "다이아 : 150시간", "마스터 : 200시간", "그랜드마스터 : 300시간", "챌린져 : 500시간"];
-
   const changePasswordBtnHandler = () => {
     setPasswordBtnHandler(passwordBtnHandler === false ? true : false);
   };
@@ -69,38 +69,28 @@ function UserInfo() {
         <div>e-mail : {email}</div>
       </div>
       <div className="userInfo-password">
-        <span>Password</span>
-        <button onClick={changePasswordBtnHandler}>Edit</button>
+        <div className="userInfo-password-flex">
+          <span>Password</span>
+          <button onClick={changePasswordBtnHandler}>Edit</button>
+        </div>
         {passwordBtnHandler && (
-          <div>
-            <input type="password" minLength="8" maxLength="20" value={password} onChange={passwordHandler} />
-            <input type="password" minLength="8" maxLength="20" value={chkPassword} onChange={chkPasswordHandler} />
-            <button onClick={validationPassword}>요청</button>
+          <div className="userInfo-password-modal">
+            <div className="userInfo-password-modal-input">
+              <input type="password" minLength="8" maxLength="20" value={password} onChange={passwordHandler} placeholder="8 charactors or more" />
+              <input type="password" minLength="8" maxLength="20" value={chkPassword} onChange={chkPasswordHandler} placeholder="Confirm" />
+            </div>
+            <div>
+              <button onClick={validationPassword}>Request</button>
+            </div>
           </div>
         )}
       </div>
       <div onClick={chkGradeList} className="userInfo-grade">
-        <div>
+        <div className="userInfo-grade-flex">
           <span onClick={chkGradeList}>Grade : {tags[tags.length - 1]}</span>
-          <button onClick={chkGradeList}>확인을 누르면 칭호가 튀어나옵니다</button>
+          <button onClick={chkGradeList}>Check All Grade</button>
         </div>
-        {grade && (
-          <div>
-            <div className="userInfo-grade-modal">
-              <div>
-                {allGrade.reverse().map((x, idx) =>
-                  tags.includes(x.split(" ")[0]) ? (
-                    <div key={idx}>{x}</div>
-                  ) : (
-                    <div key={idx} className="userInfo-grade-modal-chkColor">
-                      {x}
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-        )}
+        {grade && <GradeModal gradeModal={gradeModal} setGradeModal={setGradeModal} />}
       </div>
     </div>
   );

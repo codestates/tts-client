@@ -13,10 +13,26 @@
 .userInfo {
   display: flex;
   height: 100vh;
-  justify-content: center;
+  justify-content: space-around;
   border: 2px solid hotpink;
   flex-direction: column;
   padding: 20px 30px;
+  color: antiquewhite;
+  font-weight: 700;
+}
+
+.userInfo button {
+  background-color: antiquewhite;
+  border: none;
+  color: #0a122a;
+}
+
+.userInfo input {
+  border: none;
+  border-bottom: 2px solid antiquewhite;
+  background-color: #0a122a;
+  color: antiquewhite;
+  width: 200px;
 }
 
 .userInfo-name-email {
@@ -34,16 +50,41 @@
   padding: 10px;
 }
 
+.userInfo-password-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.userInfo-password-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userInfo-password-modal-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .userInfo-grade {
   border: 2px solid pink;
   padding: 10px;
   cursor: pointer;
 }
 
+.userInfo-grade-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .userInfo-grade-modal {
   border: 2px solid red;
   padding: 10px;
   margin-top: 10px;
+  background-color: #0a122a;
 }
 
 .userInfo-grade-modal-chkColor {
@@ -51,34 +92,75 @@
 }
 
 .weeklyRecordBox {
+  color: antiquewhite;
+  font-weight: 700;
   display: flex;
-  height: 100vh;
+  height: 300px;
   justify-content: center;
   border: 2px solid hotpink;
   flex-direction: column;
-  padding: 30px 30px;
+  padding: 20px 30px;
 }
 
 .weeklyRecord {
   display: flex;
   border: 2px solid pink;
   padding: 10px;
+  overflow: auto;
+}
+
+.weeklyRecord::-webkit-scrollbar {
+  width: 10px;
+}
+.weeklyRecord::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.weeklyRecord::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
 }
 
 @media screen and (min-height: 1024px) {
   .myPage {
-    height: 95vh;
+    margin-top: 10px;
+    height: 92vh;
     font-size: 2rem;
+  }
+
+  .userInfo button {
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 5px;
+  }
+
+  .userInfo input {
+    border: none;
+    border-bottom: 2px solid antiquewhite;
+    background-color: #0a122a;
+    color: antiquewhite;
+    font-size: 1.2rem;
   }
 
   .userInfo-name-email {
     height: 150px;
-    padding: 40px;
+    padding: 20px;
   }
 
   .userInfo-password {
     height: 220px;
-    padding: 40px;
+    padding: 20px;
+  }
+
+  .userInfo-password-modal-input {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 300px;
+    height: 80px;
   }
 
   .userInfo-grade-modal {
@@ -86,58 +168,66 @@
   }
 
   .userInfo-grade {
-    padding: 40px;
+    padding: 20px;
   }
 
   .weeklyRecord {
-    padding: 40px;
+    padding: 20px;
   }
 }
 
 @media screen and (min-height: 1366px) {
   .myPage {
-    height: 95vh;
+    height: 90vh;
     font-size: 2.5rem;
   }
 
   .userInfo-name-email {
     height: 190px;
-    padding: 60px;
+    padding: 50px;
   }
 
   .userInfo-password {
     height: 300px;
-    padding: 60px;
+    padding: 50px;
+  }
+
+  .userInfo-password-modal-input {
+    width: 400px;
+    height: 100px;
   }
 
   .userInfo-grade {
-    padding: 60px;
+    padding: 50px;
   }
 
   .userInfo-grade-modal {
     margin-top: 40px;
+    padding: 50px;
   }
 
   .weeklyRecord {
-    padding: 60px;
+    padding: 50px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1025px) {
   .myPage {
     display: flex;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     font-size: 1.6rem;
     margin-top: 20px;
   }
 
   .userInfo {
     height: 80vh;
-    justify-content: start;
+    justify-content: space-around;
     padding: 20px 20px;
+    width: 500px;
   }
 
   .weeklyRecordBox {
@@ -145,6 +235,20 @@
     width: 430px;
     justify-content: start;
     padding: 20px 30px;
+  }
+
+  .userInfo button {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 5px;
+  }
+
+  .userInfo input {
+    border: none;
+    border-bottom: 2px solid antiquewhite;
+    background-color: #0a122a;
+    color: antiquewhite;
+    font-size: 1rem;
   }
 
   .userInfo-name-email {
@@ -159,10 +263,22 @@
     height: 180px;
     padding: 20px;
   }
+
+  .userInfo-password-modal-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
   .userInfo-grade {
     border: 2px solid pink;
     padding: 10px;
     cursor: pointer;
     height: 250px;
+  }
+
+  .weeklyRecordBox {
+    padding: 30px 30px;
+    width: 500px;
   }
 }
