@@ -34,7 +34,7 @@
     border: none;
     border-bottom: 1px solid gray;
     font-size: 18px;
-    color: white;
+    color: black;
     outline: none;
 }
 
@@ -52,7 +52,6 @@
     top: -2px;
     font-size: 13px;
     color: #166cea;
-
 }
 
 .LoginBtn, .SignUpBtn{

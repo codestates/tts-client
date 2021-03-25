@@ -38,7 +38,7 @@
     margin-top: 40px;
 }
 .WelcomeBtn button {
-    padding:20px 30px;
+    padding:10px 30px;
     width: 100%;
     height: 100%;
     background-color: #166cea;
@@ -46,6 +46,10 @@
     font-size:40px;
     border: none;
     border-radius: 25px;
+    cursor: pointer;
+}
+.WelcomeBtn button:hover {
+    background-color: orange;
 }
 /*ipad*/
 @media screen and (max-width:1366px){
