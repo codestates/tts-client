@@ -15,12 +15,18 @@ export const axiosData = (api, action) => (dispatch) => {
 
 export const addToRecord = async (recordData) => {
   await axios
-    .post(api + "/user/record", recordData, { accept: "application/json", withCredentials: true })
-    .then((res) => console.log(res))
+    .post(api + "/user/record", recordData, {
+      accept: "application/json",
+      withCredentials: true,
+    })
+    .then((res) => res)
     .catch((e) => console.log(e));
 
   const getWeeklyRecord = await axios
-    .get(api + "/user/record", { accept: "application/json", withCredentials: true })
+    .get(api + "/user/record", {
+      accept: "application/json",
+      withCredentials: true,
+    })
     .then((res) => {
       return res.data.data.Coding;
     })
@@ -42,4 +48,3 @@ export const setRecords = (records) => {
     },
   };
 };
-
