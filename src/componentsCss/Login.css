@@ -1,199 +1,188 @@
-
-.LoginDiv{
-    position: relative;
-    z-index: 2;
+#pw {
+  color: black;
 }
 
-.LoginDiv h1{
-    font-size: 32px;
-    color: black;
-    text-align: center;
-    margin-bottom: 60px;
+#id {
+  color: black;
 }
 
-.inputLine{
-    width: 400px;
-    position: relative;
-    margin-top: 20px;
-}
-.inputLine:first-child{
-    margin-top: 0;
-}
-.inputLine input{
-    width: 99%;
-    padding: 20px 10px 10px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
-    color: white;
-    outline: none;
+.LoginDiv {
+  position: relative;
+  z-index: 2;
 }
 
-.inputLine label{
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    font-size: 18px;
-    color: gray;
-    transition: top .5s ease;
-
-}
-.inputLine input:focus +label,
-.inputLine input:valid +label{
-    top: -2px;
-    font-size: 13px;
-    color: #166cea;
-
+.LoginDiv h1 {
+  font-size: 32px;
+  color: black;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.LoginBtn, .SignUpBtn{
-    margin-top: 30px;
+.inputLine {
+  width: 400px;
+  position: relative;
+  margin-top: 20px;
+}
+.inputLine:first-child {
+  margin-top: 0;
+}
+.inputLine input {
+  width: 99%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  color: white;
+  outline: none;
 }
 
-
-.LoginBtn button, .SignUpBtn button{
-    width: 100%;
-    height: 40px;
-    background-color: #166cea;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 25px;
+.inputLine label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 18px;
+  color: gray;
+  transition: top 0.5s ease;
+}
+.inputLine input:focus + label,
+.inputLine input:valid + label {
+  top: -2px;
+  font-size: 13px;
+  color: #166cea;
 }
 
-.SignUpBtn button{
-    background-color: gray;
-
+.LoginBtn,
+.SignUpBtn {
+  margin-top: 30px;
 }
 
-
-.OauthDiv{
-    color: white;
-    margin-top: 40px;
-    align-items: center;
+.LoginBtn button,
+.SignUpBtn button {
+  width: 100%;
+  height: 40px;
+  background-color: #166cea;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
-.AuthGithub{
-    cursor: pointer;
-    text-align: center;
+.SignUpBtn button {
+  background-color: gray;
 }
 
-.AuthGoogle{
-    margin-right: 100px;
-    text-align: center;
+.OauthDiv {
+  color: white;
+  margin-top: 40px;
+  align-items: center;
 }
 
-
-.fa-github, .fa-google{
-    font-size: 40px;
-    color: black;
-
+.AuthGithub {
+  cursor: pointer;
+  text-align: center;
 }
 
-.fa-github:hover, .fa-google:hover{
-    color: orange;
+.AuthGoogle {
+  margin-right: 100px;
+  text-align: center;
 }
 
-.or{
-    margin-top: 10px;
+.fa-github,
+.fa-google {
+  font-size: 40px;
+  color: black;
 }
 
-.LoginBtn button:hover{
-    background-color: orange;
-}
-.SignUpBtn button:hover{
-    background-color: orange;
+.fa-github:hover,
+.fa-google:hover {
+  color: orange;
 }
 
+.or {
+  margin-top: 10px;
+}
 
-
+.LoginBtn button:hover {
+  background-color: orange;
+}
+.SignUpBtn button:hover {
+  background-color: orange;
+}
 
 /* LoginPage.js css 처리 */
 
-
-.container{
-    width: 1200px;
-    border-radius: 4px;
-    height: 100%;
-    background-color: #FCF6F5;
-    color: black;
-    margin: 100px auto;
-    display: flex;
-
+.container {
+  width: 1200px;
+  border-radius: 4px;
+  height: 100%;
+  background-color: #fcf6f5;
+  color: black;
+  margin: 100px auto;
+  display: flex;
 }
 
-.cover{
-    flex-grow: 4;
-    flex-shrink: 1;
-    height: 100%;
+.cover {
+  flex-grow: 4;
+  flex-shrink: 1;
+  height: 100%;
 }
 
-.content{
-    flex-shrink: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    flex-grow: 2;
+.content {
+  flex-shrink: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  flex-grow: 2;
 }
 
-.cover-photo{
-    height: auto;
+.cover-photo {
+  height: auto;
 }
 
 /*ipad*/
- @media screen and (max-width:1366px){
-    
+@media screen and (max-width: 1366px) {
+  .container {
+    margin-top: 150px;
+    width: 100%;
+  }
 
-    .container{
-        margin-top: 150px;
-        width: 100%;
-    }
-
-    .content{
-        position: absolute;
-        top: 27%;
-        left:45%;
-    }
-    .LoginBody{
-        padding:30px 30px;
-        background-color: #FCF6F5;
-    }
+  .content {
+    position: absolute;
+    top: 27%;
+    left: 45%;
+  }
+  .LoginBody {
+    padding: 30px 30px;
+    background-color: #fcf6f5;
+  }
 }
-
 
 /*414 iphone6+ */
- @media screen and (max-width:552px){
+@media screen and (max-width: 552px) {
+  .cover {
+    display: none;
+  }
 
-    .cover{
-        display: none;
-    }
-    
-    .content{
-        top: 10%;
-        left:30%;
-    }
+  .content {
+    top: 10%;
+    left: 30%;
+  }
 }
 
-
 /*375 iphoneX */
- @media screen and (max-width:500px){
-    
-    .content{
-        top: 10%;
-        left:41%
-    }
+@media screen and (max-width: 500px) {
+  .content {
+    top: 10%;
+    left: 41%;
+  }
 }
 
 /* 320px iphone5 */
-@media screen and (max-width:427px){
-    
-    .content{
-        margin-left: 35px;
-    }
-    
+@media screen and (max-width: 427px) {
+  .content {
+    margin-left: 35px;
+  }
 }
-
-
-

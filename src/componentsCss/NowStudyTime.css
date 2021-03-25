@@ -30,5 +30,6 @@
   .week {
     font-size: 2.5rem;
     margin: 50px 40px 0;
+    width: 400px;
   }
 }

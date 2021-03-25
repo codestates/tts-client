@@ -6,7 +6,7 @@ import "../componentsCss/NowStudyTime.css";
 export default function NowStudyTime() {
   const thisWeek = getNumberOfWeek();
   const state = useSelector((state) => state.recordReducer);
-  const { records } = state;
+  const { records, isLogin } = state;
   const allRecordsWeek =
     thisWeek in records
       ? records[thisWeek]
@@ -16,5 +16,5 @@ export default function NowStudyTime() {
           })
       : false;
 
-  return <div className="week">{allRecordsWeek === false ? "데이터가 없습니다" : `이번주 ${parseInt(allRecordsWeek / 3600)} 시간 ${parseInt((allRecordsWeek % 3600) / 60)} 분`}</div>;
+  return <div className="week">{!isLogin ? "Please Login" : allRecordsWeek === false ? "데이터가 없습니다" : `This Week ${parseInt(allRecordsWeek / 3600)} h ${parseInt((allRecordsWeek % 3600) / 60)} m`}</div>;
 }

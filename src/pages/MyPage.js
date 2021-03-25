@@ -7,7 +7,6 @@ import WeeklyRecordBox from "../components/WeeklyRecordBox";
 import "../componentsCss/MyPage.css";
 function MyPage() {
   const x = useSelector((s) => s.recordReducer.isLogin);
-
   return (
     <div>
       <div>{x ? <NavBar /> : <GuestNavBar />}</div>

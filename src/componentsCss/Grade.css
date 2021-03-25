@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center; /* main axiss */
-  align-items: center; /* cross axiss */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 15px 20px 0;
   font-size: 1.5rem;
@@ -18,14 +18,14 @@
 
 @media screen and (min-height: 1366px) {
   .grade {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 30px 40px 0;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .grade {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 50px 40px 0;
   }
 }
