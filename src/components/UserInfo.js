@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "../componentsCss/UserInfo.css";
+import GradeModal from "./GradeModal";
 
 const dotenv = require("dotenv");
 dotenv.config();
 const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
-import GradeModal from "./GradeModal";
 
 function UserInfo() {
   const userInfo = useSelector((state) => state.recordReducer).user;
