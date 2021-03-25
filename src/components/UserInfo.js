@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "../componentsCss/UserInfo.css";
+const dotenv = require("dotenv");
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
 
 function UserInfo() {
   const userInfo = useSelector((state) => state.recordReducer).user;
@@ -28,7 +31,7 @@ function UserInfo() {
     else if (chkGithubMail === "github.com") alert("github 간편로그인은 비밀번호를 바꿀수 없습니다");
     else {
       await axios
-        .post("https://localhost:5000/user/userinfo", newPassword, { accept: "application/json", withCredentials: true })
+        .post(api + "/user/userinfo", newPassword, { accept: "application/json", withCredentials: true })
         .then((res) => {
           console.log(res);
           if (res.data.message === "Your password has been changed successfully") {

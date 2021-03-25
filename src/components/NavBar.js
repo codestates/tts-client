@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 import {setLogout} from '../actions/userAction'
 import {useDispatch} from "react-redux";
 import axios from 'axios'
-
-
+const dotenv = require("dotenv");
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
 
 function NavBar() {
   const dispatch = useDispatch()
   const [active, setActive] = useState(false);
 
   const logoutHandler=()=>{
-    axios.get('https://localhost:5000/user/logout',{accept:'application/json',withCredentials:true}).then(res=>res.data)
+    axios.get(api + '/user/logout',{accept:'application/json',withCredentials:true}).then(res=>res.data)
     .then(e => {
       dispatch(setLogout())
     })

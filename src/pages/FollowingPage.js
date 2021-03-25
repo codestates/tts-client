@@ -5,8 +5,9 @@ import OneFollowing from '../components/OneFollowing';
 import '../componentsCss/FollowingPage.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios';
-
-const api = 'https://localhost:5000/follow'
+const dotenv = require("dotenv");
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
 
 const FollowingPage = () => {
   const isLogin  = useSelector((s) => s.recordReducer.isLogin);
@@ -28,7 +29,7 @@ const FollowingPage = () => {
   };
 
   const getFollowingList = () => {
-    axios.get(api + '/get', {accept: 'application/jason', withCredentials: true})
+    axios.get(api + '/follow/get', {accept: 'application/jason', withCredentials: true})
     .then(res => { 
       setLists(mapOneFollowing(res.data.data, 'fas fa-user-minus'));
     })
@@ -36,13 +37,13 @@ const FollowingPage = () => {
 
   const followHandler = (email) => (e) => {
     if (e.target.className === 'fas fa-user-plus followBtn') {
-      axios.post(api + '/add', { email }, {accept: 'application/jason', withCredentials: true})
+      axios.post(api + '/follow/add', { email }, {accept: 'application/jason', withCredentials: true})
       .then(res => {
         getFollowingList()
         setUsers([])
       })
     } else if (e.target.className === 'fas fa-user-minus followBtn') {
-      axios.post(api + '/remove', {email}, {accept: 'application/jason', withCredentials: true})
+      axios.post(api + '/follow/remove', {email}, {accept: 'application/jason', withCredentials: true})
       .then(res => {
         getFollowingList()
         setUsers([])
@@ -55,7 +56,7 @@ const FollowingPage = () => {
     if (e.target.value.length === 0) {
       setUsers([])
     } else {
-      axios.post(api + '/search', params, {accept: 'application/jason', withCredentials: true})
+      axios.post(api + '/follow/search', params, {accept: 'application/jason', withCredentials: true})
       .then(res => {
         setUsers(mapOneFollowing(res.data.data.users, "fas fa-user-plus"))
       })

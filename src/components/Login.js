@@ -6,6 +6,9 @@ import { setIsLoading } from "../actions/LoadingAction";
 import { setRecords, axiosData } from "../actions/recordAction";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+const dotenv = require('dotenv');
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
 
 
 function Login({ModalHandler}) {
@@ -36,20 +39,24 @@ function Login({ModalHandler}) {
     };
     dispatch(setIsLoading(true));
     await axios
-      .post("https://localhost:5000/main/login", body, { accept: "application/json", withCredentials: true })
+      .post(api + "/main/login", body, { accept: "application/json", withCredentials: true })
       .then((res) => res.data)
       .then((data) => {
         if (data.message === "login successfully") {
-          dispatch(axiosData("https://localhost:5000/user/record", setRecords));
+          dispatch(axiosData(api + "/user/record", setRecords));
           dispatch(setIsLogin());
           dispatch(setUserInfo());
           history.push("/main");
           dispatch(setIsLoading(false));
         } else {
           alert("no member");
+          dispatch(setIsLoading(false));
         }
       })
-      .catch(e=>alert('no member'))
+      .catch(e=>{
+        alert('no member');
+        dispatch(setIsLoading(false));
+      })
   };
   const guestHandler = (e) => {
     dispatch(setLogout());

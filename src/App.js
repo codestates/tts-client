@@ -16,11 +16,15 @@ import MyPage from './pages/MyPage'
 import WelcomePage from './pages/WelcomePage'
 import FollowingPage from './pages/FollowingPage'
 import Loading from './pages/Loading'
+const dotenv = require('dotenv');
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
+
 function App() {
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.recordReducer);
   const getAccessToken = (authorizationCode)=>{
-    axios.post('https://localhost:5000/main/oauth/accesstoken', { authorizationCode: authorizationCode,accept:'application/json',withCredentials:true})
+    axios.post(api + '/main/oauth/accesstoken', { authorizationCode: authorizationCode,accept:'application/json',withCredentials:true})
     .then(res=> {
       return res.data.data.accessToken
     }).then(accessToken => {
@@ -34,11 +38,11 @@ function App() {
         const { login, id, name } = res.data;
         const param = { email: `${login}@github.com`, password: id, userName: name ? name : login };
         axios
-          .post("https://localhost:5000/main/signup", param, { accept: "application/json" })
+          .post(api + "/main/signup", param, { accept: "application/json" })
           .catch((e) => console.log("이미 가입된 이메일"))
           .finally((e) => {
             axios
-              .post("https://localhost:5000/main/login", param, { accept: "application/json", withCredentials: true })
+              .post(api + "/main/login", param, { accept: "application/json", withCredentials: true })
               .then((res) => {
                 dispatch(setIsLogin());
                 dispatch(setUserInfo());
@@ -57,7 +61,7 @@ function App() {
     const url = new URL(window.location.href);
     const authorizationCode = url.searchParams.get("code");
     if (authorizationCode) {
-      dispatch(setIsLoading(true));
+      dispatch(setIsLoading(false));
       getAccessToken(authorizationCode)
     }
   }, []);
