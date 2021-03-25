@@ -6,7 +6,7 @@ export default function GradeModal({ gradeModal, setGradeModal }) {
   const userInfo = useSelector((state) => state.recordReducer).user;
   const { tags } = userInfo;
 
-  const allGrade = ["비기너 : 0시간", "아이언 : 5시간", "브론즈 : 10시간", "실버 : 25시간", "골드 : 50시간", "플레티넘 : 100시간", "다이아 : 150시간", "마스터 : 200시간", "그랜드마스터 : 300시간", "챌린져 : 500시간"];
+  const allGrade = ["Beginner : 0h", "Iron : 5h", "Bronze : 10h", "Silver : 25h", "Gold : 50h", "Platinum : 100h", "Diamond : 150h", "Master : 200h", "GrandMaster : 300h", "Challenger : 500h"];
 
   return (
     <div>

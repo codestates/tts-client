@@ -16,5 +16,5 @@ export default function NowStudyTime() {
           })
       : false;
 
-  return <div className="week">{!isLogin ? "Please Login" : allRecordsWeek === false ? "데이터가 없습니다" : `This Week ${parseInt(allRecordsWeek / 3600)} h ${parseInt((allRecordsWeek % 3600) / 60)} m`}</div>;
+  return <div className="week">{!isLogin ? "Please Login" : allRecordsWeek === false ? "Start work!" : `This Week ${parseInt(allRecordsWeek / 3600)} h ${parseInt((allRecordsWeek % 3600) / 60)} m`}</div>;
 }
