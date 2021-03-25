@@ -31,13 +31,18 @@ function UserInfo() {
     if (password.length < 8) alert("8자 이상 20자 이하로 입력해주세요");
     else if (password.length > 20) alert("8자 이상 20자 이하로 입력해주세요");
     else if (password !== chkPassword) alert("비밀번호가 일치하지 않습니다");
-    else if (chkGithubMail === "github.com") alert("github 간편로그인은 비밀번호를 바꿀수 없습니다");
+    else if (chkGithubMail === "github.com")
+      alert("github 간편로그인은 비밀번호를 바꿀수 없습니다");
     else {
       await axios
-        .post(api + "/user/userinfo", newPassword, { accept: "application/json", withCredentials: true })
+        .post(api + "/user/userinfo", newPassword, {
+          accept: "application/json",
+          withCredentials: true,
+        })
         .then((res) => {
-          console.log(res);
-          if (res.data.message === "Your password has been changed successfully") {
+          if (
+            res.data.message === "Your password has been changed successfully"
+          ) {
             setPassword("");
             setChkPassword("");
             alert("성공적으로 변경 완료 되었습니다");
@@ -76,8 +81,22 @@ function UserInfo() {
         {passwordBtnHandler && (
           <div className="userInfo-password-modal">
             <div className="userInfo-password-modal-input">
-              <input type="password" minLength="8" maxLength="20" value={password} onChange={passwordHandler} placeholder="8 charactors or more" />
-              <input type="password" minLength="8" maxLength="20" value={chkPassword} onChange={chkPasswordHandler} placeholder="Confirm" />
+              <input
+                type="password"
+                minLength="8"
+                maxLength="20"
+                value={password}
+                onChange={passwordHandler}
+                placeholder="8 charactors or more"
+              />
+              <input
+                type="password"
+                minLength="8"
+                maxLength="20"
+                value={chkPassword}
+                onChange={chkPasswordHandler}
+                placeholder="Confirm"
+              />
             </div>
             <div>
               <button onClick={validationPassword}>Request</button>
@@ -90,7 +109,9 @@ function UserInfo() {
           <span onClick={chkGradeList}>Grade : {tags[tags.length - 1]}</span>
           <button onClick={chkGradeList}>Check All Grade</button>
         </div>
-        {grade && <GradeModal gradeModal={gradeModal} setGradeModal={setGradeModal} />}
+        {grade && (
+          <GradeModal gradeModal={gradeModal} setGradeModal={setGradeModal} />
+        )}
       </div>
     </div>
   );

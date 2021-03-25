@@ -10,12 +10,18 @@ function OneRecordBox() {
   const state = useSelector((state) => state.recordReducer);
   const { records, isLogin } = state;
   const dayCount = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  console.log(isLogin);
   return (
     <div className="oneRecordBox">
       {thisWeek in records
         ? records[thisWeek].map((dayTime, idx) => {
-            return <OneRecord dayTime={dayTime} idx={idx} key={idx} dayCount={dayCount} />;
+            return (
+              <OneRecord
+                dayTime={dayTime}
+                idx={idx}
+                key={idx}
+                dayCount={dayCount}
+              />
+            );
           })
         : isLogin
         ? "Start Work!"
