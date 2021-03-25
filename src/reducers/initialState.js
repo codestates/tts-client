@@ -1,7 +1,7 @@
 export const initialState = {
   user: {},
   records: {},
-  isLogin: true,
+  isLogin: false,
   isLoading: false
 };
 
