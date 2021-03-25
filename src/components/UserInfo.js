@@ -106,8 +106,8 @@ function UserInfo() {
       </div>
       <div onClick={chkGradeList} className="userInfo-grade">
         <div className="userInfo-grade-flex">
-          <span onClick={chkGradeList}>Grade : {tags[tags.length - 1]}</span>
-          <button onClick={chkGradeList}>Check All Grade</button>
+          <span onClick={chkGradeList}>Rank : {tags[tags.length - 1]}</span>
+          <button onClick={chkGradeList}>Check All Rank</button>
         </div>
         {grade && (
           <GradeModal gradeModal={gradeModal} setGradeModal={setGradeModal} />
