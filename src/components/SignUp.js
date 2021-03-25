@@ -2,6 +2,9 @@ import "../componentsCss/SignUp.css";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+const dotenv = require("dotenv");
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
 
 function SignUp() {
 
@@ -39,7 +42,7 @@ function SignUp() {
         password,
         userName
     };
-    axios.post("https://localhost:5000/main/signup", body, { accept: "application/json", withCredentials: true })
+    axios.post(api + "/main/signup", body, { accept: "application/json", withCredentials: true })
       .then((res) => res.data)
       .then((data) => {
         if (data.message === "signup successfully") {
@@ -52,7 +55,7 @@ function SignUp() {
   
 
     return (
-        <div className="SignUpBody">
+    <div className="SignUpBody">
       <section className="SignUpSec">
         <form className="SignUpDiv" onSubmit={submitHandler}>
           

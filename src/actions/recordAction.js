@@ -1,10 +1,11 @@
 export const ADD_TO_RECORD = "ADD_TO_RECORD";
 export const SET_RECORDS = "SET_RECORDS";
-
 const axios = require("axios");
+const dotenv = require("dotenv");
+dotenv.config();
+const api = process.env.REACT_APP_SERVER_ADDRESS || "https://localhost:5000";
 
 export const axiosData = (api, action) => (dispatch) => {
-
   return axios(api, { accept: "application/json", withCredentials: true })
     .then((res) => {
       dispatch(action(res.data.data.Coding));
@@ -14,12 +15,12 @@ export const axiosData = (api, action) => (dispatch) => {
 
 export const addToRecord = async (recordData) => {
   await axios
-    .post("https://localhost:5000/user/record", recordData, { accept: "application/json", withCredentials: true })
+    .post(api + "/user/record", recordData, { accept: "application/json", withCredentials: true })
     .then((res) => console.log(res))
     .catch((e) => console.log(e));
 
   const getWeeklyRecord = await axios
-    .get("https://localhost:5000/user/record", { accept: "application/json", withCredentials: true })
+    .get(api + "/user/record", { accept: "application/json", withCredentials: true })
     .then((res) => {
       return res.data.data.Coding;
     })
