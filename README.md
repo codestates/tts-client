@@ -1,6 +1,6 @@
 # TTS
 
-> Time To Study 학습시간 기록 및 관리를 위한 웹 어플리케이션
+* Time To Study 학습시간 기록 및 관리를 위한 웹 어플리케이션
 ___
   
 ## TTS 사용자 메뉴얼
@@ -43,10 +43,10 @@ ___
 
 ## Work Flow
 
-> client
+* client
 
 <img width="1311" alt="스크린샷 2021-03-26 오전 11 08 35" src="https://user-images.githubusercontent.com/75593016/112568355-ae0db480-8e25-11eb-90ab-4e3b27d7e12a.png">
 
-> server
+* server
 
 <img width="1540" alt="스크린샷 2021-03-25 오후 6 00 40" src="https://user-images.githubusercontent.com/75593016/112568271-89b1d800-8e25-11eb-84fd-b8e9edd787d6.png">
